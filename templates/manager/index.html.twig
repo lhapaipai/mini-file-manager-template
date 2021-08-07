@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ManagerController!{% endblock %}
+
+{% block body %}
+<h1>File manager</h1>
+
+<div id="file-manager" data-props="{{ fileManagerConfig | json_encode | e('html_attr') }}"></div>
+{% endblock %}
+
+{% block stylesheets %}
+    {{ vite_entry_link_tags('manager.js') }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ vite_entry_script_tags('manager.js') }}
+{% endblock %}

@@ -1,0 +1,4 @@
+pentatrion_upload:
+    file_infos_helper: 'App\Service\AppFileInfosHelper'
+
+    liip_filters: ["small", "large"]

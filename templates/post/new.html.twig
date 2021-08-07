@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Post{% endblock %}
+
+{% block body %}
+    <h1>Create new Post</h1>
+
+    {{ include('post/_form.html.twig') }}
+
+    <a href="{{ path('post_index') }}">back to list</a>
+{% endblock %}
+
+{% block stylesheets %}
+    {{ vite_entry_link_tags('file-picker.js') }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ vite_entry_script_tags('file-picker.js') }}
+{% endblock %}

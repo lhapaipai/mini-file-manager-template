@@ -1,0 +1,21 @@
+{
+  "name": "mini-file-manager-template",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "keywords": [],
+  "author": "Lhapaipai",
+  "license": "ISC",
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.4.0",
+    "prettier": "^2.3.2",
+    "sass": "^1.37.5",
+    "vite": "^2.4.4"
+  },
+  "dependencies": {
+    "mini-file-manager": "file:../../modules/mini-file-manager"
+  }
+}
