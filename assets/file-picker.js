@@ -1,4 +1,4 @@
-import { openFileManager } from "mini-file-manager/src/main-without-theme";
+import { openFileManager } from "mini-file-manager";
 
 import "mini-file-manager/src/css/index.scss";
 import "mini-notifier/dist/style.css";
