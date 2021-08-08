@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 0.5rem;
+
+  a {
+    transition: color 0.3s ease;
+    color: #666;
+    margin: 1rem 2rem;
+    text-decoration: none;
+
+    &:hover {
+      color: black;
+    }
+  }
+}

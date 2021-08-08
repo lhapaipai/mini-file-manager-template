@@ -17,7 +17,7 @@ class PostType extends AbstractType
             ->add('description')
             ->add('poster', FilePickerType::class, [
                 'required' => false,
-                'uploadDirectory' => 'post',
+                'uploadDirectory' => 'form',
                 'uploadOrigin' => 'public_uploads',
                 'previewType' => 'image',
                 'fileValidation' => [

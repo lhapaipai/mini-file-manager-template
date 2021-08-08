@@ -35,10 +35,16 @@
     a {
       font-size: 1.3rem;
       padding: 0.5rem;
+      color: #888;
+      transition: color 0.15s ease;
       &:hover {
         color: white;
       }
     }
+  }
+
+  & > button {
+    align-self: flex-start;
   }
 
   &.with-value {

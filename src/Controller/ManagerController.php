@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ManagerController extends AbstractController
 {
-    #[Route('/manager', name: 'manager')]
+    #[Route('/', name: 'manager')]
     public function index(FileManagerHelper $fileManagerHelper): Response
     {
         $config = $fileManagerHelper->completeConfig([
@@ -17,12 +17,13 @@ class ManagerController extends AbstractController
             'entryPoints' => [
                 [
                     'label' => 'Uploads',
-                    'directory' => '',
+                    'directory' => 'manager',
                     'origin' => 'public_uploads',
                     'readOnly' => false,
                     'icon' => 'fa-lock'
                 ]
-            ]
+            ],
+                
         ]);
         return $this->render('manager/index.html.twig', [
             'fileManagerConfig' => $config,

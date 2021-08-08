@@ -1,4 +1,8 @@
 pentatrion_upload:
-    file_infos_helper: 'App\Service\AppFileInfosHelper'
-
-    liip_filters: ["small", "large"]
+    # default configuration
+    file_infos_helper: 'Pentatrion\UploadBundle\Service\FileInfosHelper'
+    origins:
+        public_uploads:
+            path: "%kernel.project_dir%/public/uploads"
+            liip_path: "/uploads"
+    liip_filters: ["small"]

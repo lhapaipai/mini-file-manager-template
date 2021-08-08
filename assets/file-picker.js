@@ -1,4 +1,7 @@
-import { openFileManager } from "mini-file-manager";
+import { openFileManager } from "mini-file-manager/src/main-without-theme";
+
+import "mini-file-manager/src/css/index.scss";
+import "mini-notifier/dist/style.css";
 import "./file-picker.scss";
 
 class FilePicker {

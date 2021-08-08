@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% block title %}Welcome!{% endblock %}</title>
 
         {% block stylesheets %}
@@ -13,6 +14,10 @@
         {% endblock %}
     </head>
     <body>
+        <nav>
+            <a href="{{ path("manager") }}">File Manager</a>
+            <a href="{{ path("post_edit") }}">File Picker with form</a>
+        </nav>
         {% block body %}{% endblock %}
     </body>
 </html>
