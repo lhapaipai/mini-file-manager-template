@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6d69350b86706075f84a2440baa8fa65",
+    "content-hash": "560505fe29f128ef7f57ddf1dc839fb9",
     "packages": [
         {
             "name": "composer/package-versions-deprecated",
@@ -1806,20 +1806,31 @@
         },
         {
             "name": "pentatrion/upload-bundle",
-            "version": "dev-main",
+            "version": "v0.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lhapaipai/upload-bundle.git",
+                "reference": "531ab07ebf2297443439c0b80dfaa6a07ce7837f"
+            },
             "dist": {
-                "type": "path",
-                "url": "../../modules/upload-bundle",
-                "reference": "45b616a99745cdac741efbccf1036196e501e5ad"
+                "type": "zip",
+                "url": "https://api.github.com/repos/lhapaipai/upload-bundle/zipball/531ab07ebf2297443439c0b80dfaa6a07ce7837f",
+                "reference": "531ab07ebf2297443439c0b80dfaa6a07ce7837f",
+                "shasum": ""
             },
             "require": {
                 "php": "^7.2.5 || ^8.0",
-                "symfony/mime": "^5.2"
+                "symfony/config": "^4.4 || ^5.0",
+                "symfony/dependency-injection": "^4.4 || ^5.0",
+                "symfony/form": "^4.4 || ^5.0",
+                "symfony/framework-bundle": "^4.4 || ^5.0",
+                "symfony/http-kernel": "^4.4 || ^5.0",
+                "symfony/mime": "^4.4 || ^5.0",
+                "symfony/twig-bundle": "^4.4 || ^5.0"
             },
             "suggest": {
                 "imagine/imagine": "required for image modification (resize, crop, rotation)",
                 "liip/imagine-bundle": "required to use thumbnails with your file manager",
-                "symfony/form": "required with FilePickerType",
                 "symfony/security-bundle": "required with Form",
                 "symfony/validator": "required for upload file validation"
             },
@@ -1829,6 +1840,7 @@
                     "Pentatrion\\UploadBundle\\": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1845,9 +1857,11 @@
                 "symfony",
                 "upload"
             ],
-            "transport-options": {
-                "relative": true
-            }
+            "support": {
+                "issues": "https://github.com/lhapaipai/upload-bundle/issues",
+                "source": "https://github.com/lhapaipai/upload-bundle/tree/v0.2.3"
+            },
+            "time": "2021-08-08T22:25:11+00:00"
         },
         {
             "name": "pentatrion/vite-bundle",
