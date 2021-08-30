@@ -13,13 +13,12 @@ class ManagerController extends AbstractController
     public function index(FileManagerHelper $fileManagerHelper): Response
     {
         $config = $fileManagerHelper->completeConfig([
-            'isAdmin' => true,
             'entryPoints' => [
                 [
                     'label' => 'Uploads',
                     'directory' => 'manager',
                     'origin' => 'public_uploads',
-                    'readOnly' => false,
+                    'readOnly' => true,
                     'icon' => 'fa-lock'
                 ]
             ],

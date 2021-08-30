@@ -16,7 +16,6 @@
     "vite": "^2.4.4"
   },
   "dependencies": {
-    "mini-file-manager": "file:../../modules/mini-file-manager",
-    "mini-notifier": "^0.2.0"
+    "mini-file-manager": "^0.3.3"
   }
 }
