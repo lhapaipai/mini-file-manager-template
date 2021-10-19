@@ -36,42 +36,58 @@
 {%- block form_widget_simple -%}
   {%- set type = type|default('text') -%}
   {%- if type == 'text' or type == 'textarea' or type == 'email' or type == 'password' -%}
-    {%- set attr = attr|merge({class: (attr.class|default('') ~ ' penta-input-text')|trim}) -%}
+    {%- set attr = attr|merge({class: (attr.class|default('') ~ ' form-input')|trim}) -%}
   {%- endif -%}
   {{ parent() }}
 {%- endblock form_widget_simple -%}
 
 {%- block textarea_widget -%}
-    {%- set attr = attr|merge({class: (attr.class|default('') ~ ' penta-textarea')|trim}) -%}
+    {%- set attr = attr|merge({class: (attr.class|default('') ~ ' form-textarea')|trim}) -%}
     <textarea {{ block('widget_attributes') }}>{{ value }}</textarea>
 {%- endblock textarea_widget -%}
 
 {%- block checkbox_widget -%}
-    {%- set attr = attr|merge({class: (attr.class|default('') ~ ' penta-input-checkbox')|trim}) -%}
+    {%- set attr = attr|merge({class: (attr.class|default('') ~ ' form-checkbox')|trim}) -%}
     <input type="checkbox" {{ block('widget_attributes') }}{% if value is defined %} value="{{ value }}"{% endif %}{% if checked %} checked="checked"{% endif %} />
 {%- endblock -%}
 
 {%- block radio_widget -%}
-    {%- set attr = attr|merge({class: (attr.class|default('') ~ ' penta-input-radio')|trim}) -%}
+    {%- set attr = attr|merge({class: (attr.class|default('') ~ ' form-radio')|trim}) -%}
     <input type="radio" {{ block('widget_attributes') }}{% if value is defined %} value="{{ value }}"{% endif %}{% if checked %} checked="checked"{% endif %} />
 {%- endblock radio_widget -%}
 
 {%- block choice_widget_collapsed -%}
-    {%- set attr = attr|merge({class: (attr.class|default('') ~ ' penta-select')|trim}) -%}
+    {%- set attr = attr|merge({class: (attr.class|default('') ~ ' form-select')|trim}) -%}
   {{ parent() }}
 {%- endblock choice_widget_collapsed -%}
 
 {%- block switch_widget -%}
-    {%- set attr = attr|merge({class: (attr.class|default('') ~ ' penta-toggle')|trim}) -%}
+    {%- set attr = attr|merge({class: (attr.class|default('') ~ ' form-toggle')|trim}) -%}
     <input type="checkbox" {{ block('widget_attributes') }}{% if value is defined %} value="{{ value }}"{% endif %}{% if checked %} checked="checked"{% endif %} />
 {%- endblock switch_widget -%}
 
+
 {%- block file_picker_widget -%}
-    {%- set attr = attr|merge({
-        class: (attr.class|default('') ~ ' file-picker')|trim,
-        'data-selection': selection,
-        'data-filemanager': filemanager_config,
-        'data-formfilepicker': formfilepicker_config
-    }) -%}
     {{- block('form_widget_simple') -}}
+    {% if preview.type == 'image' %}
+        <div class="preview image">
+            <img data-type="image" class="{{ preview.class }}" src="{{ uploaded_image_filtered(preview.path, preview.filter, preview.origin) }}" data-filter="{{ preview.filter }}" alt="">
+            <div class="filename">{{ preview.filename }}</div>
+            <div class="actions">
+                <a href="#" class="remove"><i class="fa-trash"></i></a>
+                <a href="#" class="browse" data-target="{{ id }}" data-filemanager="{{ picker_config | e('html_attr') }}"><i class="fa-folder"></i></a>
+            </div>
+        </div>
+    {% else %}
+        <div class="preview file">
+            <img data-type="file" src="{{ preview.path }}" alt="">
+            <div class="filename">{{ preview.filename }}</div>
+            <div class="actions">
+                <a href="#" class="remove"><i class="fa-trash"></i></a>
+                <a href="#" class="browse" data-target="{{ id }}" data-filemanager="{{ picker_config | e('html_attr') }}"><i class="fa-folder"></i></a>
+            </div>
+        </div>
+    {% endif %}
+    <button class="btn outlined browse" data-target="{{ id }}" data-filemanager="{{ picker_config | e('html_attr') }}">Parcourir</button>
+
 {%- endblock -%}

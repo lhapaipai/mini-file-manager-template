@@ -8,6 +8,8 @@
 
 /public/media/*
 /public/uploads/*
+/public/ckeditor
+/public/tinymce
 /var/cache/*
 /var/log/*
 !.gitkeep
@@ -19,7 +21,7 @@
 .rsyncignore
 /makefile
 node_modules/
-README.local
+/README.local
 
 ###> liip/imagine-bundle ###
 /public/media/cache/

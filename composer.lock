@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "560505fe29f128ef7f57ddf1dc839fb9",
+    "content-hash": "184ba7b7d0254dd89c2756f6441f1546",
     "packages": [
         {
             "name": "composer/package-versions-deprecated",
@@ -1806,16 +1806,16 @@
         },
         {
             "name": "pentatrion/upload-bundle",
-            "version": "v0.2.3",
+            "version": "v0.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lhapaipai/upload-bundle.git",
-                "reference": "531ab07ebf2297443439c0b80dfaa6a07ce7837f"
+                "reference": "bc2bf3b803e0b5611c4472a61d87f070f229440c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lhapaipai/upload-bundle/zipball/531ab07ebf2297443439c0b80dfaa6a07ce7837f",
-                "reference": "531ab07ebf2297443439c0b80dfaa6a07ce7837f",
+                "url": "https://api.github.com/repos/lhapaipai/upload-bundle/zipball/bc2bf3b803e0b5611c4472a61d87f070f229440c",
+                "reference": "bc2bf3b803e0b5611c4472a61d87f070f229440c",
                 "shasum": ""
             },
             "require": {
@@ -1859,9 +1859,9 @@
             ],
             "support": {
                 "issues": "https://github.com/lhapaipai/upload-bundle/issues",
-                "source": "https://github.com/lhapaipai/upload-bundle/tree/v0.2.3"
+                "source": "https://github.com/lhapaipai/upload-bundle/tree/v0.3.2"
             },
-            "time": "2021-08-08T22:25:11+00:00"
+            "time": "2021-10-19T19:48:39+00:00"
         },
         {
             "name": "pentatrion/vite-bundle",
@@ -4790,6 +4790,54 @@
             "time": "2021-07-23T15:54:19+00:00"
         },
         {
+            "name": "symfony/profiler-pack",
+            "version": "v1.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/profiler-pack.git",
+                "reference": "bcd6e80af9819454ac18594362e7875fd1d771c7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/profiler-pack/zipball/bcd6e80af9819454ac18594362e7875fd1d771c7",
+                "reference": "bcd6e80af9819454ac18594362e7875fd1d771c7",
+                "shasum": ""
+            },
+            "require": {
+                "symfony/stopwatch": "*",
+                "symfony/web-profiler-bundle": "*"
+            },
+            "require-dev": {
+                "symfony/stopwatch": "*",
+                "symfony/web-profiler-bundle": "*"
+            },
+            "type": "symfony-pack",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A pack for the Symfony web profiler",
+            "support": {
+                "issues": "https://github.com/symfony/profiler-pack/issues",
+                "source": "https://github.com/symfony/profiler-pack/tree/v1.0.6"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-08-20T17:27:58+00:00"
+        },
+        {
             "name": "symfony/property-access",
             "version": "v5.3.4",
             "source": {
@@ -6395,6 +6443,85 @@
                 }
             ],
             "time": "2021-07-21T12:38:00+00:00"
+        },
+        {
+            "name": "symfony/web-profiler-bundle",
+            "version": "v5.3.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/web-profiler-bundle.git",
+                "reference": "9ba1e05fdc7a46979047ba6c8949bd35e3a386a5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/web-profiler-bundle/zipball/9ba1e05fdc7a46979047ba6c8949bd35e3a386a5",
+                "reference": "9ba1e05fdc7a46979047ba6c8949bd35e3a386a5",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+                "symfony/config": "^4.4|^5.0",
+                "symfony/framework-bundle": "^5.3",
+                "symfony/http-kernel": "^5.3",
+                "symfony/polyfill-php80": "^1.16",
+                "symfony/routing": "^4.4|^5.0",
+                "symfony/twig-bundle": "^4.4|^5.0",
+                "twig/twig": "^2.13|^3.0.4"
+            },
+            "conflict": {
+                "symfony/dependency-injection": "<5.2",
+                "symfony/form": "<4.4",
+                "symfony/messenger": "<4.4"
+            },
+            "require-dev": {
+                "symfony/browser-kit": "^4.4|^5.0",
+                "symfony/console": "^4.4|^5.0",
+                "symfony/css-selector": "^4.4|^5.0",
+                "symfony/stopwatch": "^4.4|^5.0"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Bundle\\WebProfilerBundle\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Provides a development tool that gives detailed information about the execution of any request",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/web-profiler-bundle/tree/v5.3.8"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-09-17T08:55:39+00:00"
         },
         {
             "name": "symfony/yaml",

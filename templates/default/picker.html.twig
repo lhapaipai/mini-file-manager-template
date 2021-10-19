@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}File manager{% endblock %}
+
+{% block body %}
+    <main class="main">
+        <button class="penta-button" id="file-picker" data-props="{{ fileManagerConfig | json_encode | e('html_attr') }}">Browse Files</button>
+        <p>Output</p>
+        <code><pre id="output"></pre></code>
+    </main>
+{% endblock %}
+
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ vite_entry_link_tags('file-picker.js') }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ vite_entry_script_tags('file-picker.js') }}
+{% endblock %}

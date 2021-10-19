@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ManagerController extends AbstractController
 {
-    #[Route('/', name: 'manager')]
+    #[Route('/', name: 'file_manager')]
     public function index(FileManagerHelper $fileManagerHelper): Response
     {
         $config = $fileManagerHelper->completeConfig([
@@ -18,14 +18,43 @@ class ManagerController extends AbstractController
                     'label' => 'Uploads',
                     'directory' => 'manager',
                     'origin' => 'public_uploads',
-                    'readOnly' => true,
+                    'readOnly' => false,
                     'icon' => 'fa-lock'
                 ]
             ],
-                
+            'fileUpload' => [
+                'maxFileSize' => 512 * 1024,
+            ],
+            'theme' => "app-custom-theme" 
         ]);
-        return $this->render('manager/index.html.twig', [
+        return $this->render('default/manager.html.twig', [
             'fileManagerConfig' => $config,
         ]);
     }
+
+    #[Route('/file-picker', name: 'file_picker')]
+    public function filePicker(FileManagerHelper $fileManagerHelper): Response
+    {
+        $config = $fileManagerHelper->completeConfig([
+            'entryPoints' => [
+                [
+                    'label' => 'Uploads',
+                    'directory' => 'manager',
+                    'origin' => 'public_uploads',
+                    'readOnly' => false,
+                    'icon' => 'fa-lock'
+                ]
+            ],
+            'fileUpload' => [
+                'maxFileSize' => 512 * 1024,
+            ],
+            'theme' => "app-custom-theme",
+            'multiSelection' => true
+                
+        ]);
+        return $this->render('default/picker.html.twig', [
+            'fileManagerConfig' => $config,
+        ]);
+    }
+
 }

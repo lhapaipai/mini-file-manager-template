@@ -2,6 +2,20 @@
 
 This repository presents a complete example of the integration of the [mini-file-manager](https://github.com/lhapaipai/mini-file-manager) package with the [pentatrion/upload-bundle](https://github.com/lhapaipai/upload-bundle) bundle in a Symfony backend.
 
+## Installation
+
+```bash
+chmod -R 777 var/{cache,log} public/{uploads,media}
+
+composer install
+# configure DATABASE_URL from .env (form example)
+symfony console doctrine:database:create
+symfony console doctrine:migrations:migrate -n
+
+npm install
+npm run build
+```
+
 ## Dependancies
 
 <p align="center">

@@ -16,17 +16,22 @@ class PostType extends AbstractType
             ->add('title')
             ->add('description')
             ->add('poster', FilePickerType::class, [
-                'required' => false,
-                'uploadDirectory' => 'form',
-                'uploadOrigin' => 'public_uploads',
-                'previewType' => 'image',
-                'fileValidation' => [
-                    'mimeGroup' => 'image',
-                    'imageOptions' => [
-                        'ratio' => 1,
-                        'minWidth' => 300
-                    ]
+                'fileManagerConfig' => [
+                    'entryPoints' => [
+                        [
+                            'label' => 'Uploads',
+                            'directory' => 'form',
+                            'origin' => 'public_uploads',
+                        ]
+                    ],
+                    'fileUpload' => [
+                        'maxFileSize' => 512 * 1024,
+                    ],
+                ],
+                'formFilePickerConfig' => [
+                    'multiple' => true
                 ]
+
             ]);
     }
 

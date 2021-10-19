@@ -1,7 +1,8 @@
-// vite.config.js
+import { defineConfig } from 'vite'
 import { resolve } from "path";
 import { unlinkSync, existsSync } from "fs";
 import vue from "@vitejs/plugin-vue";
+import postcssConfig from "./postcss.config.js";
 
 const symfonyPlugin = {
   name: "symfony",
@@ -24,7 +25,7 @@ const symfonyPlugin = {
   },
 };
 
-export default {
+export default defineConfig({
   plugins: [symfonyPlugin, vue()],
   server: {
     watch: {
@@ -34,6 +35,9 @@ export default {
       strict: false,
       allow: [".."],
     },
+  },
+  css: {
+    postcss: postcssConfig
   },
   root: "./assets",
   base: "/build/",
@@ -45,9 +49,12 @@ export default {
     rollupOptions: {
       input: [
         "./assets/app.js",
-        "./assets/manager.js",
+        "./assets/file-manager.js",
         "./assets/file-picker.js",
+        "./assets/form.js",
+        "./assets/tinymce.js",
+        "./assets/ckeditor.js",
       ],
     },
   },
-};
+});

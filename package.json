@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "postinstall": "rm -rf public/tinymce && cp -r node_modules/tinymce public/ && rm -rf public/ckeditor && cp -r node_modules/@ckeditor public/ckeditor",
     "dev": "vite",
     "build": "vite build"
   },
@@ -11,11 +12,17 @@
   "license": "ISC",
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.4.0",
+    "autoprefixer": "^10.3.7",
+    "postcss": "^8.3.9",
+    "postcss-import": "^14.0.2",
+    "postcss-nested": "^5.0.6",
     "prettier": "^2.3.2",
-    "sass": "^1.37.5",
     "vite": "^2.4.4"
   },
   "dependencies": {
-    "mini-file-manager": "^0.3.3"
+    "@ckeditor/ckeditor5-build-classic": "^30.0.0",
+    "mini-file-manager": "^1.0.1",
+    "pentatrion-theme": "github:lhapaipai/pentatrion-theme#v0.1.2",
+    "tinymce": "^5.10.0"
   }
 }

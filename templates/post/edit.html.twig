@@ -5,16 +5,16 @@
 {% block body %}
     {{ form_start(form) }}
         {{ form_widget(form) }}
-        <button class="btn">Save</button>
+        <button class="penta-button">Save</button>
     {{ form_end(form) }}
 {% endblock %}
 
 {% block stylesheets %}
     {{ parent() }}
-    {{ vite_entry_link_tags('file-picker.js') }}
+    {{ vite_entry_link_tags('form.js') }}
 {% endblock %}
 
 {% block javascripts %}
     {{ parent() }}
-    {{ vite_entry_script_tags('file-picker.js') }}
+    {{ vite_entry_script_tags('form.js') }}
 {% endblock %}

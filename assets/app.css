@@ -1,0 +1,68 @@
+@import "pentatrion-theme/css/button.css";
+@import "pentatrion-theme/css/checkbox-radio.css";
+@import "pentatrion-theme/css/form-group.css";
+@import "pentatrion-theme/css/text-textarea-select.css";
+@import "pentatrion-theme/css/toggle.css";
+
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 0.5rem;
+
+  a {
+    transition: color 0.3s ease;
+    color: #666;
+    margin: 1rem 2rem;
+    text-decoration: none;
+
+    &:hover {
+      color: black;
+    }
+  }
+}
+
+body {
+  --primary-color-light: #fff9d2;
+  --primary-color: #ffe64b;
+  --primary-color-active: #fadf30;
+  --primary-color-dark: #eac800;
+
+  --gray-extra-light: #e7e7e7;
+  --gray-light: #ccc;
+  --gray: #999;
+  --gray-dark: #333;
+
+  --form-border-radius: 0.25rem;
+  --form-border-width: 1px;
+  --form-ring-shadow: 0 0 1px 3px #eee;
+
+  --transition-border: border-color 0.3s ease;
+  --transition-shadow: box-shadow 0.3s ease;
+  --transition-background: background-color 0.3s ease;
+  --transition-color: color 0.3s ease;
+  --transition-opacity: opacity 0.3s ease;
+
+  --background-color: #fbfcff;
+  
+  --red: #842029;
+  --red-light: #f8d7da;
+  --red-text: #dc3545;
+  
+  --green-light: #d1eacf;
+  --green: #2b5229;
+  
+  --orange: rgb(217, 142, 1);
+  
+  --blue-light: #e6e8ef;
+  --blue-prestashop: #bbcdd2;
+  
+  --blue-light: #e6e8ef;
+}
