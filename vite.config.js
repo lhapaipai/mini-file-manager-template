@@ -50,7 +50,7 @@ export default defineConfig({
       input: [
         "./assets/app.js",
         "./assets/file-manager.js",
-        "./assets/file-picker.js",
+        "./assets/file-manager-modal.js",
         "./assets/form.js",
         "./assets/tinymce.js",
         "./assets/ckeditor.js",

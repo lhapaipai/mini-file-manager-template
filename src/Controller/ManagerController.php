@@ -32,7 +32,7 @@ class ManagerController extends AbstractController
         ]);
     }
 
-    #[Route('/file-picker', name: 'file_picker')]
+    #[Route('/file-manager-modal', name: 'file_manager_modal')]
     public function filePicker(FileManagerHelper $fileManagerHelper): Response
     {
         $config = $fileManagerHelper->completeConfig([
@@ -52,7 +52,7 @@ class ManagerController extends AbstractController
             'multiSelection' => true
                 
         ]);
-        return $this->render('default/picker.html.twig', [
+        return $this->render('default/manager-modal.html.twig', [
             'fileManagerConfig' => $config,
         ]);
     }
