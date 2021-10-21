@@ -4,7 +4,7 @@
 
 {% block body %}
     <main class="main">
-        <button class="penta-button" id="file-picker" data-props="{{ fileManagerConfig | json_encode | e('html_attr') }}">Browse Files</button>
+        <button class="penta-button" id="file-picker" data-minifilemanager="{{ fileManagerConfig | json_encode | e('html_attr') }}">Browse Files</button>
         <p>Output</p>
         <code><pre id="output"></pre></code>
     </main>

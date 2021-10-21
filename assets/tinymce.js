@@ -1,5 +1,5 @@
 import { FileManagerModal } from "mini-file-manager";
-import "mini-file-manager/dist/style.css";
+import "mini-file-manager/dist/mini-file-manager.css";
 
 import "./tinymce.css";
 
@@ -32,7 +32,7 @@ tinymce.init({
       selection.push(value.substr(basePath.length))
     }
 
-    new FileManagerModal({
+    FileManagerModal({
       ...fileManagerOptions,
       originalSelection: selection
     }, (selectedFiles) => {

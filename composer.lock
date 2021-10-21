@@ -1806,16 +1806,16 @@
         },
         {
             "name": "pentatrion/upload-bundle",
-            "version": "v0.3.2",
+            "version": "v0.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lhapaipai/upload-bundle.git",
-                "reference": "bc2bf3b803e0b5611c4472a61d87f070f229440c"
+                "reference": "11e1f94056b9b9c85adc0c10f9420d99061198b8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lhapaipai/upload-bundle/zipball/bc2bf3b803e0b5611c4472a61d87f070f229440c",
-                "reference": "bc2bf3b803e0b5611c4472a61d87f070f229440c",
+                "url": "https://api.github.com/repos/lhapaipai/upload-bundle/zipball/11e1f94056b9b9c85adc0c10f9420d99061198b8",
+                "reference": "11e1f94056b9b9c85adc0c10f9420d99061198b8",
                 "shasum": ""
             },
             "require": {
@@ -1859,9 +1859,9 @@
             ],
             "support": {
                 "issues": "https://github.com/lhapaipai/upload-bundle/issues",
-                "source": "https://github.com/lhapaipai/upload-bundle/tree/v0.3.2"
+                "source": "https://github.com/lhapaipai/upload-bundle/tree/v0.5.0"
             },
-            "time": "2021-10-19T19:48:39+00:00"
+            "time": "2021-10-21T04:28:14+00:00"
         },
         {
             "name": "pentatrion/vite-bundle",

@@ -28,8 +28,8 @@ class PostType extends AbstractType
                         'maxFileSize' => 512 * 1024,
                     ],
                 ],
-                'formFilePickerConfig' => [
-                    'multiple' => true
+                'formPreviewConfig' => [
+                    'multiple' => true,
                 ]
 
             ]);

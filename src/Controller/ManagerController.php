@@ -10,9 +10,9 @@ use Symfony\Component\Routing\Annotation\Route;
 class ManagerController extends AbstractController
 {
     #[Route('/', name: 'file_manager')]
-    public function index(FileManagerHelper $fileManagerHelper): Response
+    public function index(): Response
     {
-        $config = $fileManagerHelper->completeConfig([
+        $config = FileManagerHelper::completeConfig([
             'entryPoints' => [
                 [
                     'label' => 'Uploads',
@@ -33,9 +33,9 @@ class ManagerController extends AbstractController
     }
 
     #[Route('/file-manager-modal', name: 'file_manager_modal')]
-    public function filePicker(FileManagerHelper $fileManagerHelper): Response
+    public function filePicker(): Response
     {
-        $config = $fileManagerHelper->completeConfig([
+        $config = FileManagerHelper::completeConfig([
             'entryPoints' => [
                 [
                     'label' => 'Uploads',
@@ -49,7 +49,7 @@ class ManagerController extends AbstractController
                 'maxFileSize' => 512 * 1024,
             ],
             'theme' => "app-custom-theme",
-            'multiSelection' => true
+            'multiple' => true
                 
         ]);
         return $this->render('default/manager-modal.html.twig', [
