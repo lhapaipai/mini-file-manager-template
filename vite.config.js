@@ -3,30 +3,13 @@ import { resolve } from "path";
 import { unlinkSync, existsSync } from "fs";
 import vue from "@vitejs/plugin-vue";
 import postcssConfig from "./postcss.config.js";
+import Inspect from 'vite-plugin-inspect'
 
-const symfonyPlugin = {
-  name: "symfony",
-  configResolved(config) {
-    if (config.env.DEV && config.build.manifest) {
-      let buildDir = resolve(config.root, config.build.outDir, "manifest.json");
-      existsSync(buildDir) && unlinkSync(buildDir);
-    }
-  },
-  configureServer(devServer) {
-    let { watcher, ws } = devServer;
-    watcher.add(resolve("templates/**/*.twig"));
-    watcher.on("change", function (path) {
-      if (path.endsWith(".twig")) {
-        ws.send({
-          type: "full-reload",
-        });
-      }
-    });
-  },
-};
+import symfonyPlugin from 'vite-plugin-symfony';
+
 
 export default defineConfig({
-  plugins: [symfonyPlugin, vue()],
+  plugins: [symfonyPlugin(), vue(), Inspect()],
   server: {
     watch: {
       disableGlobbing: false,
@@ -47,14 +30,14 @@ export default defineConfig({
     assetsDir: "",
     outDir: "../public/build/",
     rollupOptions: {
-      input: [
-        "./assets/app.js",
-        "./assets/file-manager.js",
-        "./assets/file-manager-modal.js",
-        "./assets/form.js",
-        "./assets/tinymce.js",
-        "./assets/ckeditor.js",
-      ],
+      input: {
+        "app": "./assets/app.js",
+        "fileManager": "./assets/file-manager.js",
+        "fileManagerModal": "./assets/file-manager-modal.js",
+        "form": "./assets/form.js",
+        "tinymce": "./assets/tinymce.js",
+        "ckeditor": "./assets/ckeditor.js",
+      },
     },
   }
 });

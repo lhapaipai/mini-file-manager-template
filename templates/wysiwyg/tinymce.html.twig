@@ -9,11 +9,11 @@
 
 {% block stylesheets %}
     {{ parent() }}
-    {{ vite_entry_link_tags('tinymce.js') }}
+    {{ vite_entry_link_tags('tinymce') }}
 {% endblock %}
 
 {% block javascripts %}
     {{ parent() }}
     <script src="/tinymce/tinymce.min.js"></script>
-    {{ vite_entry_script_tags('tinymce.js') }}
+    {{ vite_entry_script_tags('tinymce') }}
 {% endblock %}

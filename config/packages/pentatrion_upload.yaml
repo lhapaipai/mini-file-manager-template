@@ -5,4 +5,4 @@ pentatrion_upload:
         public_uploads:
             path: "%kernel.project_dir%/public/uploads"
             liip_path: "/uploads"
-    liip_filters: ["small"]
+    liip_filters: ["small", "large"]

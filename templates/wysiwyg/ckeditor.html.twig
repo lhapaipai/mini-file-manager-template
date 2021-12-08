@@ -12,12 +12,12 @@
 
 {% block stylesheets %}
     {{ parent() }}
-    {{ vite_entry_link_tags('ckeditor.js') }}
+    {{ vite_entry_link_tags('ckeditor') }}
 {% endblock %}
 
 {% block javascripts %}
     {{ parent() }}
     <script src="/ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script>
-    {{ vite_entry_script_tags('ckeditor.js') }}
+    {{ vite_entry_script_tags('ckeditor') }}
 {% endblock %}
 

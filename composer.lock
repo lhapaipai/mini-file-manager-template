@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "184ba7b7d0254dd89c2756f6441f1546",
+    "content-hash": "f8baec43ce4cc2f36314f6bc1418c282",
     "packages": [
         {
             "name": "composer/package-versions-deprecated",
@@ -1806,17 +1806,11 @@
         },
         {
             "name": "pentatrion/upload-bundle",
-            "version": "v0.5.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/lhapaipai/upload-bundle.git",
-                "reference": "11e1f94056b9b9c85adc0c10f9420d99061198b8"
-            },
+            "version": "dev-main",
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/lhapaipai/upload-bundle/zipball/11e1f94056b9b9c85adc0c10f9420d99061198b8",
-                "reference": "11e1f94056b9b9c85adc0c10f9420d99061198b8",
-                "shasum": ""
+                "type": "path",
+                "url": "../upload-bundle",
+                "reference": "452dc20f5812a09d685e3aa3ffe601625cd73ac7"
             },
             "require": {
                 "php": "^7.2.5 || ^8.0",
@@ -1840,7 +1834,6 @@
                     "Pentatrion\\UploadBundle\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1857,28 +1850,26 @@
                 "symfony",
                 "upload"
             ],
-            "support": {
-                "issues": "https://github.com/lhapaipai/upload-bundle/issues",
-                "source": "https://github.com/lhapaipai/upload-bundle/tree/v0.5.0"
-            },
-            "time": "2021-10-21T04:28:14+00:00"
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "pentatrion/vite-bundle",
-            "version": "v0.1.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/lhapaipai/vite-bundle.git",
-                "reference": "18338093f5b8c3846575106769c659796e12b2be"
-            },
+            "version": "dev-add_public_folder",
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/lhapaipai/vite-bundle/zipball/18338093f5b8c3846575106769c659796e12b2be",
-                "reference": "18338093f5b8c3846575106769c659796e12b2be",
-                "shasum": ""
+                "type": "path",
+                "url": "../vite-bundle",
+                "reference": "50f152a9ef3a11552c314feb615044582f930957"
             },
             "require": {
-                "php": "^7.2.5 || ^8.0"
+                "php": "^7.2.5 || ^8.0",
+                "symfony/config": "^4.4 || ^5.0",
+                "symfony/dependency-injection": "^4.4 || ^5.0",
+                "symfony/framework-bundle": "^4.4 || ^5.0",
+                "symfony/http-client": "^4.4 || ^5.0",
+                "symfony/http-kernel": "^4.4 || ^5.0",
+                "symfony/twig-bundle": "^4.4 || ^5.0"
             },
             "type": "symfony-bundle",
             "autoload": {
@@ -1886,7 +1877,6 @@
                     "Pentatrion\\ViteBundle\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1896,18 +1886,16 @@
                     "email": "hugues.tavernier@protonmail.com"
                 }
             ],
-            "description": "Integration with your Symfony app & Vite",
+            "description": "Vite integration for your Symfony app",
             "keywords": [
                 "bundle",
                 "symfony",
                 "vite",
                 "vitejs"
             ],
-            "support": {
-                "issues": "https://github.com/lhapaipai/vite-bundle/issues",
-                "source": "https://github.com/lhapaipai/vite-bundle/tree/v0.1.3"
-            },
-            "time": "2021-06-06T21:46:51+00:00"
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "psr/cache",
@@ -3578,6 +3566,93 @@
                 }
             ],
             "time": "2021-07-25T09:39:16+00:00"
+        },
+        {
+            "name": "symfony/http-client",
+            "version": "v5.3.11",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/http-client.git",
+                "reference": "3f55da60fc3c3d6e6a4144ee65a37d23a637107e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/http-client/zipball/3f55da60fc3c3d6e6a4144ee65a37d23a637107e",
+                "reference": "3f55da60fc3c3d6e6a4144ee65a37d23a637107e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+                "psr/log": "^1|^2|^3",
+                "symfony/deprecation-contracts": "^2.1",
+                "symfony/http-client-contracts": "^2.4",
+                "symfony/polyfill-php73": "^1.11",
+                "symfony/polyfill-php80": "^1.16",
+                "symfony/service-contracts": "^1.0|^2"
+            },
+            "provide": {
+                "php-http/async-client-implementation": "*",
+                "php-http/client-implementation": "*",
+                "psr/http-client-implementation": "1.0",
+                "symfony/http-client-implementation": "2.4"
+            },
+            "require-dev": {
+                "amphp/amp": "^2.5",
+                "amphp/http-client": "^4.2.1",
+                "amphp/http-tunnel": "^1.0",
+                "amphp/socket": "^1.1",
+                "guzzlehttp/promises": "^1.4",
+                "nyholm/psr7": "^1.0",
+                "php-http/httplug": "^1.0|^2.0",
+                "psr/http-client": "^1.0",
+                "symfony/dependency-injection": "^4.4|^5.0",
+                "symfony/http-kernel": "^4.4.13|^5.1.5",
+                "symfony/process": "^4.4|^5.0",
+                "symfony/stopwatch": "^4.4|^5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\HttpClient\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Provides powerful methods to fetch HTTP resources synchronously or asynchronously",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/http-client/tree/v5.3.11"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-11-20T16:42:42+00:00"
         },
         {
             "name": "symfony/http-client-contracts",
@@ -6902,7 +6977,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "pentatrion/upload-bundle": 20
+        "pentatrion/upload-bundle": 20,
+        "pentatrion/vite-bundle": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

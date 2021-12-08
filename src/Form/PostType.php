@@ -25,8 +25,13 @@ class PostType extends AbstractType
                         ]
                     ],
                     'fileUpload' => [
-                        'maxFileSize' => 512 * 1024,
+                        'maxFileSize' => 512 * 1024 *  1024,
                     ],
+                    'fileValidation' => [
+                        'imageOptions' => [
+                            'ratio' => 1
+                        ]
+                    ]
                 ],
                 'formPreviewConfig' => [
                     'multiple' => true,
