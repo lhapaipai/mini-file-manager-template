@@ -25,7 +25,7 @@ class Page
     private $title;
 
     /**
-     * @ORM\ManyToMany(targetEntity=UploadedFile::class)
+     * @ORM\ManyToMany(targetEntity=UploadedFile::class, cascade={"persist", "remove"})
      */
     private $photos;
 

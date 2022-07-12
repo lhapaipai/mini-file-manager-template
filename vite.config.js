@@ -45,7 +45,8 @@ export default defineConfig({
         "form": "./assets/form.js",
         "tinymce": "./assets/tinymce.js",
         "ckeditor": "./assets/ckeditor.js",
-        "ogoxeTheme": "./assets/ogoxe-ui/app.js"
+        "ogoxeTheme": "./assets/ogoxe-ui/app.js",
+        "formFilePicker": "./assets/form-file-picker.js"
       },
     },
   },

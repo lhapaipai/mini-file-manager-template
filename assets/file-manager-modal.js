@@ -1,4 +1,4 @@
-import { FileManagerModal } from "../../mini-file-manager/src/index";
+import { fileManagerModal } from "../../mini-file-manager/src/index";
 // import { FileManagerModal } from "mini-file-manager";
 // import "mini-file-manager/dist/mini-file-manager.css";
 
@@ -10,7 +10,7 @@ let options = JSON.parse(pickerElt.dataset.minifilemanager);
 
 pickerElt.addEventListener("click", () => {
   
-  FileManagerModal(options, (selectedFiles) => {
+  fileManagerModal(options, (selectedFiles) => {
     outputElt.innerHTML = JSON.stringify(selectedFiles, null, 2);
   }, () => {
     outputElt.innerHTML = '';

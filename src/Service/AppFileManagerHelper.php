@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Manager\Upload;
+namespace App\Service;
 
-use App\Entity\Training;
+use Pentatrion\UploadBundle\Service\FileManagerHelperInterface;
 
-class AppFileManagerHelper
+class AppFileManagerHelper implements FileManagerHelperInterface
 {
-    public static function completeConfigOgoxe($baseConfig = [], $locale = 'fr'): array
+    public static function completeConfig($baseConfig = [], $locale = 'fr'): array
     {
         $entryPoints = $baseConfig['entryPoints'];
 

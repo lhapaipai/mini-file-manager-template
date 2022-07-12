@@ -1,6 +1,7 @@
 pentatrion_upload:
     # default configuration
-    file_infos_helper: 'Pentatrion\UploadBundle\Service\FileInfosHelper'
+    file_infos_helper: 'App\Service\AppFileInfosHelper'
+    file_manager_helper: 'App\Service\AppFileManagerHelper'
     origins:
         public_uploads:
             path: "%kernel.project_dir%/public/uploads"

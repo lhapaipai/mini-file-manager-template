@@ -1,6 +1,6 @@
-import { FileManager } from "mini-file-manager/src/index";
+import { fileManager } from "mini-file-manager/src/index";
 
 import "./file-manager.css";
 
 // config is parsed from data-minifilemanager
-FileManager("#file-manager");
+fileManager("#file-manager");

@@ -66,7 +66,7 @@
     <input type="checkbox" {{ block('widget_attributes') }}{% if value is defined %} value="{{ value }}"{% endif %}{% if checked %} checked="checked"{% endif %} />
 {%- endblock switch_widget -%}
 
-{%- block file_picker_widget -%}
+{# {%- block file_picker_widget -%}
     {%- set attr = attr|merge({
         class: (attr.class|default('') ~ ' file-picker')|trim,
         'data-files': files,
@@ -74,4 +74,18 @@
         'data-formpreview': formpreview_config
     }) -%}
     {{- block('form_widget_simple') -}}
-{%- endblock -%}
+{%- endblock -%} #}
+
+{%- block uploaded_file_label -%}
+{%- endblock uploaded_file_label -%}
+
+{%- block files_picker_widget -%}
+    {% if prototype is defined and not prototype.rendered %}
+        {%- set attr = attr|merge({'data-prototype': form_row(prototype) }) -%}
+    {% endif %}
+    {{- block('form_widget') -}}
+{%- endblock files_picker_widget -%}
+
+{%- block file_picker_label -%}
+    {{- block('form_label') -}}
+{%- endblock file_picker_label -%}

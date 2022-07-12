@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Manager\Upload\AppFileManagerHelper;
+use App\Service\AppFileManagerHelper;
 use Pentatrion\UploadBundle\Service\FileManagerHelper;
 use Pentatrion\ViteBundle\Asset\EntrypointRenderer;
 use Pentatrion\ViteBundle\Asset\EntrypointsLookup;
@@ -57,7 +57,7 @@ class ManagerController extends AbstractController
     #[Route('/manager/bric', name: 'file_manager_bric')]
     public function managerBric(): Response
     {
-        $config = AppFileManagerHelper::completeConfigOgoxe(self::DEFAULT_MANAGER_CONFIG);
+        $config = AppFileManagerHelper::completeConfig(self::DEFAULT_MANAGER_CONFIG);
         return $this->render('default/manager.html.twig', [
             'fileManagerConfig' => $config,
             'provider' => 'bric'
@@ -67,7 +67,7 @@ class ManagerController extends AbstractController
     #[Route('/manager/ogoxe', name: 'file_manager_ogoxe')]
     public function managerOgoxe(): Response
     {
-        $config = AppFileManagerHelper::completeConfigOgoxe(self::DEFAULT_MANAGER_CONFIG);
+        $config = AppFileManagerHelper::completeConfig(self::DEFAULT_MANAGER_CONFIG);
         return $this->render('default/manager.html.twig', [
             'fileManagerConfig' => $config,
             'provider' => 'ogoxe'
@@ -87,7 +87,7 @@ class ManagerController extends AbstractController
     #[Route('/file-manager-modal/ogoxe', name: 'file_manager_modal_ogoxe')]
     public function fileManagerModalOgoxe(): Response
     {
-        $config = AppFileManagerHelper::completeConfigOgoxe(self::MULTIPLE_MANAGER_CONFIG);
+        $config = AppFileManagerHelper::completeConfig(self::MULTIPLE_MANAGER_CONFIG);
         return $this->render('default/manager-modal.html.twig', [
             'fileManagerConfig' => $config,
             'provider' => 'ogoxe'
