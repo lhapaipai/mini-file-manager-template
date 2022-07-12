@@ -1,0 +1,200 @@
+.ogoxe-icon {
+    appearance: none;
+    outline: none;
+    background-color: transparent;
+    transition: var(--transition-color), var(--transition-background), var(--transition-shadow),
+        var(--transition-border);
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+
+    i::before {
+        font-size: 1.1rem;
+    }
+
+    &,
+    &:visited {
+        color: var(--grey400);
+    }
+
+    &:hover {
+        color: var(--grey800);
+    }
+
+    &:active {
+        color: black;
+    }
+
+    &[class*="color"],
+    &.correct,
+    &.incorrect {
+        box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.15), 0 2px 2px 0px rgba(0, 0, 0, 0.15),
+            0 1px 5px 0px rgba(0, 0, 0, 0.1);
+
+        &:focus {
+            box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.15), 0 2px 2px 0px rgba(0, 0, 0, 0.15),
+                0 1px 5px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        &:hover {
+            box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.15), 0 4px 5px 0px rgba(0, 0, 0, 0.15),
+                0 1px 10px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        &:active {
+            box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.15), 0 8px 10px 1px rgba(0, 0, 0, 0.15),
+                0 3px 14px 2px rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    .loader {
+        display: none;
+    }
+
+    &.is-loading {
+        position: relative;
+
+        i {
+            position: relative;
+            z-index: 2;
+        }
+
+        .loader {
+            display: block;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            animation: rotate 1.4s infinite linear;
+            transform: scale(2);
+
+            &::before {
+                width: 50%;
+                height: 50%;
+                background: white;
+                border-radius: 100% 0 0 0;
+                position: absolute;
+                top: 0;
+                left: 0;
+                content: '';
+            }
+
+            &::after {
+                width: 80%;
+                height: 80%;
+                border-radius: 50%;
+                content: '';
+                margin: auto;
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+            }
+        }
+    }
+
+    &.primary-color,
+    &.primary-color:visited,
+    /* have to double for precedence with .on-hover */
+    &.primary-color.primary-color:hover,
+    &.primary-color.primary-color:active {
+        background-color: var(--primary-color);
+        color: var(--primary-color-text);
+
+        &.is-loading {
+            background-color: transparent;
+
+            .loader {
+                background: linear-gradient(to right, white 10%, var(--primary-color) 42%);
+
+                &::after {
+                    background: var(--primary-color);
+                }
+            }
+        }
+    }
+
+    &.red-color,
+    &.red-color:visited,
+    &.red-color.red-color:hover,
+    &.red-color.red-color:active {
+        color: white;
+        background-color: var(--red);
+
+        &.is-loading {
+            background-color: transparent;
+
+            .loader {
+                background: linear-gradient(to right, white 10%, var(--red) 42%);
+
+                &::after {
+                    background: var(--red);
+                }
+            }
+        }
+    }
+
+    &.help,
+    &.help:visited {
+        color: var(--cyan);
+
+        &:hover,
+        &:active {
+            color: var(--primary-color);
+        }
+    }
+
+    &.on-hover,
+    &.on-hover:visited {
+        background-color: transparent;
+        color: var(--grey400);
+        box-shadow: none;
+    }
+
+
+    &.correct {
+        color: var(--green);
+        border: 2px solid var(--green);
+        background-color: white;
+
+        &.active {
+            color: white;
+            background-color: var(--green);
+        }
+    }
+
+    &.incorrect {
+        color: var(--red);
+        border: 2px solid var(--red);
+        background-color: white;
+
+        &.active {
+            color: white;
+            background-color: var(--red);
+        }
+
+        i::before {
+            font-size: .9rem;
+        }
+
+    }
+
+
+
+    i {
+        margin: 0;
+        padding: 0;
+    }
+
+    .with-a11y &:focus {
+        box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--primary-color700);
+    }
+}

@@ -1,0 +1,38 @@
+.ogoxe-tag {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 6px;
+  padding-right: 6px;
+  height: 20px;
+  border-radius: 10px;
+  font-size: .8rem;
+  font-weight: normal;
+  box-shadow: 0 0 1px #aaa, 0 2px 5px rgba(39, 45, 59, 0.2);
+  margin: 2px 5px;
+
+  &.primary-color {
+    background-color: var(--primary-color);
+    color: white;
+  }
+
+  &.alert-1 {
+    background-color: var(--yellow);
+    color: black;
+  }
+
+  &.alert-2 {
+    background-color: var(--orange);
+    color: white;
+  }
+
+  &.alert-3 {
+    background-color: var(--red);
+    color: white;
+  }
+
+  &.no-alert {
+    background-color: var(--green);
+  }
+}

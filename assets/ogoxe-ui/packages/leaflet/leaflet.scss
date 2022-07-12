@@ -1,0 +1,85 @@
+div.leaflet-container {
+  font-family: "Poppins", sans-serif;
+}
+
+
+.leaflet-control-attribution {
+
+  @media (max-width: 1150px) {
+    .details {
+      display: none;
+    }
+  }
+
+  @media (max-width: 550px) {
+    display: none;
+  }
+}
+
+.ogoxe-marker-cluster-container {
+
+  &.ogoxe-marker-cluster-large {
+
+    .label {
+      font-size: 1.1rem;
+      font-weight: 600;
+      top: 22%;
+    }
+  }
+
+  &.ogoxe-marker-cluster-medium {
+
+    .label {
+      top: 22%;
+      font-size: 1.1rem;
+    }
+  }
+
+  &.ogoxe-marker-cluster-small {
+
+    .label {
+      font-size: 1rem;
+    }
+  }
+
+  .ogoxe-marker-cluster {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .label {
+    position: absolute;
+    display: block;
+    width: 100%;
+    left: 0;
+    top: 20%;
+    text-align: center;
+  }
+}
+
+.ogoxe-context {
+
+  .ogoxe-tabs {
+
+    p {
+      margin: 1rem 0;
+    }
+  }
+
+  .ogoxe-tabs-contents {
+
+    .btns {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

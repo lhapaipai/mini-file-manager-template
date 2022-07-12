@@ -1,0 +1,23 @@
+.simplebar-scrollbar.simplebar-visible::before {
+    opacity: 0.3;
+}
+
+div.simplebar-track.simplebar-vertical {
+    width: 9px;
+}
+
+div.simplebar-track.simplebar-horizontal {
+    height: 9px;
+}
+
+
+.simplebar-wrapper {
+
+    .simplebar-mask {
+        z-index: 1;
+    }
+
+    .simplebar-scrollbar {
+        z-index: 1;
+    }
+}

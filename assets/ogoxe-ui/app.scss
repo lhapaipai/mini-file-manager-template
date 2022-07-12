@@ -1,0 +1,51 @@
+@import "./variables";
+@import "./base";
+@import "./components";
+@import "./fonts";
+@import "./form";
+@import "./layouts";
+@import "./map";
+
+@import "./packages/mini-notifier/mini-notifier.scss";
+@import "./packages/simplebar/simplebar.scss";
+@import "./packages/leaflet/leaflet.scss";
+
+html,
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Poppins, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-default-color);
+  text-align: left;
+  background-color: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#pulse-button {
+  margin-right: 2rem;
+}
+
+.ogoxe-alert {
+  margin-top: 50px;
+}

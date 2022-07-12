@@ -1,0 +1,52 @@
+.ogoxe-input-button {
+  display: flex;
+
+  .ogoxe-input-text {
+    border-radius: var(--form-border-radius) 0 0 var(--form-border-radius);
+  }
+
+  .ogoxe-button {
+    border-radius: 0 var(--form-border-radius) var(--form-border-radius) 0;
+    padding-left: .5rem;
+    padding-right: .5rem;
+  }
+}
+
+.ogoxe-button-group {
+  position: relative;
+
+  .ogoxe-button {
+    border-radius: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: .5rem;
+    padding-right: .5rem;
+
+    &:first-child {
+      border-radius: var(--form-border-radius) 0 0 var(--form-border-radius);
+      &.outlined {
+        border-left-width: var(--form-border-width);
+      }
+    }
+
+    &:last-child {
+      border-radius: 0 var(--form-border-radius) var(--form-border-radius) 0;
+    }
+
+    &:first-child:last-child {
+      border-radius: var(--form-border-radius);
+    }
+
+    &.outlined {
+      border-left-width: 0px;
+    }
+
+    &:first-child:last-child {
+      border-radius: var(--form-border-radius);
+
+      &.outlined {
+        border-left-width: var(--form-border-width);
+      }
+    }
+  }
+}

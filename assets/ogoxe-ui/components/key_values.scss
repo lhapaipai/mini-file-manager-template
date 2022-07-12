@@ -1,0 +1,46 @@
+.key-values {
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+  display: block;
+  max-width: 400px;
+
+  &.with-box {
+    background-color: var(--blue-gray-lighter);
+    padding: 0.5rem;
+  }
+
+  .row {
+    display: flex;
+    align-items: flex-start;
+    line-height: 1.1rem;
+
+    color: var(--grey700);
+
+    &>*:first-child {
+      flex: 0 0 80px;
+      color: var(--indigo500);
+    }
+
+    &>*:nth-child(2) {
+      margin-right: auto;
+    }
+
+
+    .ogoxe-icon {
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+
+  .header & {
+    margin-top: .5rem;
+
+    .row {
+      line-height: 1.3rem;
+
+      &>*:first-child {
+        flex-basis: 60px;
+      }
+    }
+  }
+}

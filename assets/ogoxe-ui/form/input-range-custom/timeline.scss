@@ -1,0 +1,28 @@
+.timeline {
+  width: 100%;
+  display: flex;
+
+  /* ceci afin d'empecher que le bouton ne change
+     de taille lorsqu'on change son texte */
+  .timeline-button {
+      width: 80px;
+
+      button {
+        width: 100%;
+        height: var(--range-input-height);
+      }
+  }
+  .timeline-range {
+    z-index: 1;
+    font-family: inherit;
+    flex: 1;
+    margin: 0 1rem;
+  }
+
+  .timeline-value {
+    display: flex;
+    align-items: center;
+    width: 130px;
+    line-height: 100%;
+  }
+}

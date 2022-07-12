@@ -1,0 +1,128 @@
+<h2 class="storybook-h2">Champ simple</h2>
+<div class="form-group">
+    <label for="name_1" class="required">Label 1</label>
+    <input type="text" id="name_1" required="required" class="ogoxe-input-text">
+    <p class="help-text">Message optionnel d'aide</p>
+</div>
+
+<h2 class="storybook-h2">Champ avec erreur</h2>
+<div class="form-group">
+    <label for="name_2" class="required">Label 2</label>
+    <input type="text" id="name_2" required="required" class="ogoxe-input-text is-invalid">
+    <p class="input-error">Cette valeur ne doit pas être vide.</p>
+</div>
+
+<h2 class="storybook-h2">2 colonnes avec chacune un label</h2>
+<div class="two-cols">
+    <div class="form-group">
+        <label for="name_4" class="required">Label 4</label>
+        <input type="text" id="name_4" required="required" class="ogoxe-input-text">
+    </div>
+    <div class="form-group">
+        <label for="name_5" class="required">Label 5</label>
+        <input type="text" id="name_5" required="required" class="ogoxe-input-text">
+    </div>
+</div>
+
+<h2 class="storybook-h2">un label et 2 colonnes avec chacune un sous-label</h2>
+<div class="form-group">
+    <label>Titre principal</label>
+    <div class="two-cols">
+        <div class="form-group">
+            <label for="name_4" class="required">Label 4</label>
+            <input type="text" id="name_4" required="required" class="ogoxe-input-text">
+        </div>
+        <div class="form-group">
+            <label for="name_5" class="required">Label 5</label>
+            <input type="text" id="name_5" required="required" class="ogoxe-input-text">
+        </div>
+    </div>
+</div>
+
+<h2 class="storybook-h2">2 colonnes avec un seul label</h2>
+<div class="form-group">
+    <label>Label principal</label>
+    <div class="two-cols">
+        <input type="text" id="name_6" required="required" class="ogoxe-input-text">
+        <input type="text" id="name_7" required="required" class="ogoxe-input-text">
+    </div>
+</div>
+
+<h2 class="storybook-h2">des checks en ligne largeur du contenu (radio ou checkbox)</h2>
+<div class="form-group">
+    <div class="label">Label principal</div>
+    <div class="checks-inline">
+        <span>
+            <input id="checks-2-1" type="checkbox" class="ogoxe-input-checkbox" value="1">
+            <label for="checks-2-1">Réponse 1 longue</label>
+        </span>
+        <span>
+            <input id="checks-2-2" type="checkbox" class="ogoxe-input-checkbox" value="0">
+            <label for="checks-2-2">Court</label>
+        </span>
+        <span>
+            <input id="checks-2-3" type="checkbox" class="ogoxe-input-checkbox" value="0">
+            <label for="checks-2-3">Différentes longueurs</label>
+        </span>
+        <span>
+            <input id="checks-2-4" type="checkbox" class="ogoxe-input-checkbox" value="0">
+            <label for="checks-2-4">Réponse 4</label>
+        </span>
+    </div>
+</div>
+
+<h2 class="storybook-h2">des checks en ligne largeur fixe (radio ou checkbox)</h2>
+<p class="help-text">Note : vous aurez probablement besoin de surcharger le minmax() du grid-template-columns.</p>
+<div class="form-group">
+    <div class="label">Label principal</div>
+    <div class="checks-inline-grid">
+        <span>
+            <input id="checks-3-1" type="checkbox" class="ogoxe-input-checkbox" value="1">
+            <label for="checks-3-1">Réponse 1 longue</label>
+        </span>
+        <span>
+            <input id="checks-3-2" type="checkbox" class="ogoxe-input-checkbox" value="0">
+            <label for="checks-3-2">Court</label>
+        </span>
+        <span>
+            <input id="checks-3-3" type="checkbox" class="ogoxe-input-checkbox" value="0">
+            <label for="checks-3-3">Différentes longueurs</label>
+        </span>
+        <span>
+            <input id="checks-3-4" type="checkbox" class="ogoxe-input-checkbox" value="0">
+            <label for="checks-3-4">Réponse 4</label>
+        </span>
+    </div>
+</div>
+
+<h2 class="storybook-h2">des checks en colonne (radio ou checkbox)</h2>
+<div class="form-group">
+    <div class="label">Label principal</div>
+    <div class="checks-block">
+        <span>
+            <input id="preview-yes" type="checkbox" class="ogoxe-input-checkbox" value="1">
+            <label for="preview-yes">Oui</label>
+        </span>
+        <span>
+            <input id="preview-no" type="checkbox" class="ogoxe-input-checkbox" value="0">
+            <label for="preview-no">Non</label>
+        </span>
+    </div>
+</div>
+
+<h2 class="storybook-h2">un checkbox ou un radio ou un toggle</h2>
+<div class="form-group">
+    <div class="label">Label principal</div>
+    <div class="checks-block">
+        <span>
+            <input id="checks-4-1" type="checkbox" class="ogoxe-toggle" value="1">
+            <label for="checks-4-1">J'accepte les CGU</label>
+        </span>
+    </div>
+</div>
+
+<h2 class="storybook-h2">Boutons de soumission</h2>
+<div class="submission-btns">
+    <a href="#" class="ogoxe-button outlined">Retour</a>
+    <button type="submit" id="save" name="save" class="ogoxe-button secondary-color">Enregistrer</button>
+</div>

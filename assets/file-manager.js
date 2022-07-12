@@ -1,5 +1,4 @@
-import { FileManager } from "mini-file-manager";
-import "mini-file-manager/dist/mini-file-manager.css";
+import { FileManager } from "mini-file-manager/src/index";
 
 import "./file-manager.css";
 

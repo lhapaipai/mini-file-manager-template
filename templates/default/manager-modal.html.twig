@@ -3,20 +3,28 @@
 {% block title %}File manager{% endblock %}
 
 {% block body %}
-    <main class="main">
-        <button class="penta-button" id="file-picker" data-minifilemanager="{{ fileManagerConfig | json_encode | e('html_attr') }}">Browse Files</button>
-        <p>Output</p>
-        <code><pre id="output"></pre></code>
-    </main>
+<main class="main">
+    <button class="penta-button" id="file-picker"
+        data-minifilemanager="{{ fileManagerConfig | json_encode | e('html_attr') }}">Browse Files</button>
+    <p>Output</p>
+    <code><pre id="output"></pre></code>
+</main>
 {% endblock %}
 
 
 {% block stylesheets %}
-    {{ parent() }}
-    {{ vite_entry_link_tags('fileManagerModal') }}
+{{ parent() }}
+{% if provider == 'ogoxe' %}
+{{ vite_entry_link_tags('ogoxeTheme') }}
+{% endif %}
+
+{{ vite_entry_link_tags('fileManagerModal') }}
 {% endblock %}
 
 {% block javascripts %}
-    {{ parent() }}
-    {{ vite_entry_script_tags('fileManagerModal') }}
+{{ parent() }}
+{% if provider == 'ogoxe' %}
+{{ vite_entry_script_tags('ogoxeTheme') }}
+{% endif %}
+{{ vite_entry_script_tags('fileManagerModal') }}
 {% endblock %}

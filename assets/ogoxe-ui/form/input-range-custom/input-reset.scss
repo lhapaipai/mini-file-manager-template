@@ -1,0 +1,41 @@
+.ogoxe-input-range-custom {
+  /* reset -> invisible range for all browsers */
+  input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    width: 100%;
+    height: var(--range-input-height);
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+    outline: none;
+    /* 
+      Might be due to the browser-specific prefixes -moz and -webkit.
+      We can't combine -webkit / -moz / -ms in one rule */
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    &::-moz-range-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      border: 0;
+    }
+
+    &::-ms-track {
+      width: 100%;
+
+      background: transparent;
+      border-color: transparent;
+      color: transparent;
+    }
+
+    .with-a11y &:focus {
+      box-shadow: 0 0 0 2px white, 0 0 0 4px var(--primary-color);
+      border-radius: 2px;
+    }
+  }
+}

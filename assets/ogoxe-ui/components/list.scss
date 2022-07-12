@@ -1,0 +1,130 @@
+.alert-list {
+
+  &_item {
+    margin: 1rem 0;
+    display: flex;
+    border: 1px solid var(--blue-gray-lighter);
+    box-shadow: 0 2px 5px rgba(39, 45, 59, 0.2);
+    border-radius: var(--list-border-radius);
+    align-items: center;
+
+    .key {
+      display: none;
+    }
+
+    & > * {
+      width: 0;
+      flex: 1;
+      padding: 0.75rem;
+    }
+
+    .name {
+      margin-left: 3rem;
+    }
+  }
+
+  .actions {
+    flex: 0 0 content;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    .modify,
+    .delete {
+      display: block;
+
+      width: 40px;
+      height: 40px;
+      border: 0;
+      outline: none;
+      border-radius: 50%;
+    }
+  }
+}
+
+.table-list {
+  background: #f5f6fa 0 0 no-repeat padding-box;
+  box-shadow: 0 2px 5px rgba(39, 45, 59, 0.2);
+  border: 1px solid #e7e9f3;
+
+  &_item {
+    align-items: center;
+    display: flex;
+
+    & > * {
+      width: 0;
+      flex: 1;
+      padding: 0.75rem;
+
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    .name {
+      margin-left: 3rem;
+    }
+
+    .actions {
+      flex: 0 0 content;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      a {
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        display: block;
+        border: 0;
+        outline: none;
+        padding: 0;
+      }
+    }
+  }
+}
+
+.fake {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+@media (max-width: 1024px) {
+  .alert-list {
+    .header {
+      display: none;
+    }
+
+    &_item {
+      align-items: flex-start;
+      padding: 0.5rem;
+      flex-wrap: wrap;
+
+      & > * {
+        flex-basis: 50%;
+        order: 2;
+        padding: 0;
+      }
+
+      .key {
+        display: block;
+        font-weight: 400;
+      }
+
+      .name {
+        margin-left: 0;
+      }
+    }
+
+    .actions {
+      order: 1;
+      flex-basis: 100%;
+    }
+  }
+
+  .table-list {
+
+    .name {
+      margin-left: 0;
+    }
+  }
+}

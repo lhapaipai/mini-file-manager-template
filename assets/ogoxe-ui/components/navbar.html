@@ -1,0 +1,212 @@
+<div class="storybook-grid-container">
+    <!-- we have several body tags only for the storybook otherwise never do -->
+
+    <body class="public">
+        <nav id="ogoxe-navbar" class="ogoxe-navbar">
+            <ul class="mobile-menu">
+                <li class="logo">
+                    <a href="#">
+                        <img src="/images/ogoxe_app_logo.svg" width="130" height="30">
+                    </a>
+                </li>
+                <li class="js-open-menu open-menu">
+                    <a href="#">
+                        <i class="fe-menu"></i>
+                    </a>
+                </li>
+                <li class="js-close-menu close-menu">
+                    <a href="#">
+                        <i class="fe-cancel-circled"></i>
+                    </a>
+                </li>
+            </ul>
+            <ul class="menu">
+                <li class="logo">
+                    <a href="#">
+                        <img src="/images/ogoxe_app_logo.svg" width="130" height="30">
+                    </a>
+        
+                </li>
+                <li class="menu-item " data-tooltip-pos="down" aria-label="Accueil">
+                    <a href="#">
+                        <i class="fe-map-location"></i>
+                        <span class="menu-label">Accueil</span>
+                    </a>
+                </li>
+                <li class="disabled menu-item ">
+                    <a href="">
+                        <i class="fe-dashboard"></i>
+                        <span class="menu-label">Tableau de bord</span>
+                    </a>
+                </li>
+                <li class="menu-item with-submenu active" data-tooltip-pos="down" aria-label="Données">
+                    <a href="#">
+                        <i class="fe-chart"></i>
+                        <span class="menu-label">Données</span>
+                    </a>
+                    <div class="submenu-content">
+        <h4>Par station</h4>
+        
+        <ul class="submenu">
+          <li class=" active">
+            <a href="#">Ogoxe</a>
+        </li>
+        
+        
+            <li class="">
+            <a href="#">PLVG</a>
+        </li>
+        
+          
+          <li class="">
+            <a href="#">Vigicrues</a>
+        </li>
+        
+        
+          <li class="">
+            <a href="#">Nappes phréatiques</a>
+        </li>
+        
+        </ul>
+        
+        <h4>Par paramètre</h4>
+        
+        <ul class="submenu">
+          <li class="">
+            <a href="#">Ogoxe</a>
+        </li>
+        
+        
+            <li class="">
+            <a href="#">PLVG</a>
+        </li>
+        
+          
+          <li class="">
+            <a href="#">Vigicrues</a>
+        </li>
+        
+        
+          <li class="">
+            <a href="#">Nappes phréatiques</a>
+        </li>
+        
+        </ul>
+        
+        <h4>Qualité eau potable</h4>
+        
+        <ul class="submenu">
+          <li class="">
+            <a href="#">Analyse par ville</a>
+        </li>
+        
+        </ul>
+        
+        <h4 class="disabled">Mix-Graphs</h4></div>
+                </li>
+                <li class="menu-item with-submenu " data-tooltip-pos="down" aria-label="Notifications">
+                    <a href="#">
+                        <i class="fe-bell-alt"></i>
+                        <span class="menu-label">Notifications</span>
+                    </a>
+                    <div class="submenu-content"><ul class="submenu">
+            <li class=" ">
+                <a href="#">Ogoxe</a>
+            </li>
+                <li class="">
+                <a href="#">PLVG</a>
+            </li>
+                <li class="disabled">
+                <a href="#">BRIC</a>
+            </li>
+            <li class="">
+                <a href="#">
+                    Vigicrues
+                    <img src="/images/logos/vigicrues.svg" width="20" height="20">
+                </a>
+            </li>
+            <li class="">
+                <a href="#">
+                    Nappes phréatiques
+                    <img src="/images/logos/brgm.svg" width="20" height="20">
+                </a>
+            </li>
+            <li class="disabled">
+                <a href="#">Qualité eau des rivières</a>
+            </li>
+            <li class="disabled">
+                <a href="#">Qualité eau potable</a>
+            </li>
+            <li class="disabled">
+                <a href="#">Qualité de l'air</a>
+            </li>
+            <li class="disabled">
+                <a href="#">Sismique</a>
+            </li>
+            <li class="disabled">
+                <a href="#">
+                    Vent
+                    <img src="/images/logos/noaa.svg" width="20" height="20">
+                </a>
+            </li>
+            <li class=" ">
+                <a href="#">
+                    Précipitations
+                    <img src="/images/logos/mf.svg" width="20" height="20">
+                            </a>
+            </li>
+            <li class=" ">
+                <a href="#">
+                  PCS
+                  <i class="fe-pcs"></i>
+                </a>
+            </li>
+            <li class="disabled">
+                <a href="#">Station en surveillance</a>
+            </li>
+        </ul>
+        </div>
+                </li>
+                <li class=" menu-item">
+                    <a href="#">
+                        <i class="fe-message"></i>
+                        <span class="menu-label">Message</span>
+                    </a>
+                </li>
+                <li class="menu-item " data-tooltip-pos="down" aria-label="Contacts">
+                    <a href="#">
+                        <i class="fe-contact"></i>
+                        <span class="menu-label">Contacts</span>
+                    </a>
+                </li>
+                <li class="sep"></li>
+                <li class="menu-item with-right-dropdown with-submenu">
+                    <a href="#">
+                        <i class="fe-user-circle"></i>
+                        <span class="menu-label">Profil</span>
+                    </a>
+                    <div class="submenu-content">
+                        <ul class="submenu">
+                            <li class="without-link">
+                                <b>Grégoire Guillot</b>
+                            </li>
+                            <li>
+                                <a href="#">Paramètres</a>
+                            </li>
+                            <li>
+                                <a href="#" id="feedback-button">Vos commentaires</a>
+                            </li>
+                                                    <li>
+                                    <a href="#">Administration</a>
+                                </li>
+                                                <li>
+                                <a href="#">Se déconnecter</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </body>
+
+</div>

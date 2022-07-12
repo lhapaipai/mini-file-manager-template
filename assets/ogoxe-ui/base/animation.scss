@@ -1,0 +1,32 @@
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes block-glace {
+  0% {
+      transform: scale(1.5) rotate(55deg) translate(-55%);
+  }
+  25% {
+      transform: scale(1.5) rotate(55deg) translate(-100%);
+  }
+  26% {
+      transform: scale(1.5) rotate(55deg) translate(100%);
+  }
+  100% {
+      transform: scale(1.5) rotate(55deg) translate(-55%);
+  }
+}
+
+@keyframes rotate {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}

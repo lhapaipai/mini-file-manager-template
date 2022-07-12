@@ -1,0 +1,132 @@
+.mini-notifier-theme {
+  --red: #dc3545;
+  --red-lighter: #f8d7da;
+  --green: #2b5229;
+  --green-lighter: #e1fae1;
+  --border-radius: 0.25rem;
+}
+
+.mini-notifier_notifications {
+  position: absolute;
+
+  &.fixed {
+    position: fixed;
+  }
+
+  z-index: 5000;
+  right: 20px;
+  top: 50px;
+}
+
+/* Default notification styles */
+.mini-notifier_notification {
+  position: relative;
+  width: 220px;
+  margin-top: 15px;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 11px 17px 0 rgba(23, 32, 61, 0.13), 0 0 2px #bbb;
+  border-radius: var(--border-radius);
+  line-height: 1.4em;
+  word-wrap: break-word;
+  border-left: 3px solid var(--primary-color);
+
+  * {
+    box-sizing: content-box;
+  }
+
+  &--success {
+    background: var(--green-lighter) !important;
+    border-left: 3px solid var(--green);
+  }
+
+  &--error {
+    background: var(--red-lighter) !important;
+    border-left: 3px solid var(--red);
+  }
+
+  &__cross {
+    position: absolute;
+    top: 5px;
+    right: 2px;
+    width: 20px;
+    height: 20px;
+    opacity: 0.54;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &:active {
+      opacity: 1;
+    }
+  }
+
+  &__btns {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-top: 5px;
+    justify-content: space-around;
+
+    > :first-child {
+      margin-right: 10px;
+    }
+
+    > .penta-input-text {
+      width: 0;
+      flex: 1;
+    }
+
+    .penta-button:not(.outlined) {
+      background-color: var(--primary-color);
+      border: var(--button-border-width) solid var(--primary-color);
+      transition: var(--transition-background), var(--transition-shadow), var(--transition-border);
+
+      &,
+      &:visited {
+        color: var(--primary-color-text);
+      }
+
+      &:hover {
+        background-color: white;
+        color: var(--primary-color);
+      }
+
+      &:active {
+        border-color: var(--primary-color-dark);
+        color: var(--primary-color-dark);
+      }
+    }
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+
+  70% {
+    transform: scale(0.95);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.mini-notifier_notification--bounce-in {
+  animation-name: bounceIn;
+  animation-duration: 600ms;
+  animation-iteration-count: 1;
+}

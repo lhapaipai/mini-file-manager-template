@@ -1,0 +1,45 @@
+.record-box {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  background: #ffffff 0 0 no-repeat padding-box;
+  box-shadow: 0 1px 4px #15223214;
+  transition: var(--transition-background), var(--transition-shadow), var(--transition-border);
+
+  &:focus {
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.15), 0 2px 2px 0px rgba(0, 0, 0, 0.15), 0 1px 5px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  &:hover {
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.15), 0 4px 5px 0px rgba(0, 0, 0, 0.15), 0 1px 10px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  &:active {
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.15), 0 8px 10px 1px rgba(0, 0, 0, 0.15),
+      0 3px 14px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  border: 1px solid #d7dbec;
+  border-radius: 6px;
+  cursor: pointer;
+
+  h4 {
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .key-values {
+    max-height: 350px;
+    overflow: auto;
+
+    margin-bottom: 0;
+    max-width: none;
+
+    .row> :first-child {
+      flex: 0 0 100px;
+    }
+  }
+}

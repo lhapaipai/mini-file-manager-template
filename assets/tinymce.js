@@ -1,5 +1,8 @@
-import { FileManagerModal } from "mini-file-manager";
-import "mini-file-manager/dist/mini-file-manager.css";
+// import { FileManagerModal } from "mini-file-manager";
+// import "mini-file-manager/dist/mini-file-manager.css";
+
+import { FileManagerModal } from "../../mini-file-manager/src/index";
+
 
 import "./tinymce.css";
 

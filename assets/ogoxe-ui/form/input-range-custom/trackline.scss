@@ -1,0 +1,55 @@
+.ogoxe-input-range-custom {
+
+  .track-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    pointer-events: none;
+  }
+
+  .track-element {
+    width: calc(100% - var(--range-input-height));
+    height: var(  --range-track-height);
+    z-index: -1;
+    position: relative;
+  }
+
+  .track, .track-ticks, .track-progress {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .track {
+    background: var(--primary-color-light);
+    border-radius: 3px;
+    margin-left: -2px;
+    width: calc(100% + 4px);
+  }
+
+  .track-progress {
+    background: var(--primary-color);
+    border-radius: 3px;
+  }
+
+  .track-ticks {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .track-tick {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: white;
+  }
+}

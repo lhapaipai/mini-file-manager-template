@@ -1,0 +1,258 @@
+/* html body to override bootstrap colors, instead :root */
+html body {
+
+  /* deprecated */
+  --primary-color-lighter: #c1c9fd;
+  --primary-color-light: #2a44f9;
+  --primary-color: #0b2aa1;
+  --primary-color-dark: #081e71;
+  --primary-color-darker: #041141;
+  --primary-color-text: #ffffff;
+
+  --almost-white: #f5f6fa;
+  --light-gray: #bbb;
+  --gray: #999;
+  --gray-dark: #333;
+
+  --blue-gray-lighter: #d7dbec;
+  --blue-gray-light: #7e84a3;
+  --blue-gray: #545a76;
+  --blue-gray-dark: #303343;
+
+  --text-blue: #223263;
+
+  --turquoise: #67CDFD;
+
+  --secondary-color: #ff6d13;
+  --secondary-color-dark: #df5500;
+  /* texte des <label> et des titres */
+
+  --icon-bg-blue: #2d62ed;
+
+  --text-default-color: #212529;
+
+  --list-border-radius: 1rem;
+  --list-header-color: #e6e9f4;
+  --list-color200: #c7cde6;
+  --list-color100: #e6e9f4;
+  --list-color50: #eaecf6;
+  --list-color0: #f1f3f9;
+
+  --red-lighter: #f8d7da;
+  --red-dark: #610000;
+  --red: #f0142f;
+
+  --yellow: #fff713;
+  --yellow-dark: #beb90c;
+
+  --orange-lighter: #fff3eb;
+  --orange: #ff6d13;
+  --orange-dark: #9e3d00;
+
+  --green-lighter: #e1ffe1;
+  --green: #3dd598;
+  --green-dark: #1e9b69;
+
+
+
+
+  /* move to this new system color */
+
+  /* new https://tailwind.simeongriggs.dev/blue/0B2AA1 */
+  --primary-color0: #ECEFFE;
+  --primary-color50: #e6e9f4;
+  --primary-color100: #C1CDFB;
+  --primary-color200: #7E96F6;
+  --primary-color300: #4064F2;
+  --primary-color400: #0F39E0;
+  --primary-color500: #0B2AA1;
+  --primary-color: #0b2aa1;
+  --primary-color600: #092181;
+  --primary-color700: #07185F;
+  --primary-color800: #04103E;
+  --primary-color900: #020921;
+  --primary-color-text: #ffffff;
+
+  /* new https://tailwind.simeongriggs.dev/blue/0B2AA1 */
+  --blue0: #ECEFFE;
+  --blue50: #e6e9f4;
+  --blue100: #C1CDFB;
+  --blue200: #7E96F6;
+  --blue300: #4064F2;
+  --blue400: #0F39E0;
+  --blue500: #0B2AA1;
+  --blue: #0b2aa1;
+  --blue600: #092181;
+  --blue700: #07185F;
+  --blue800: #04103E;
+  --blue900: #020921;
+  --blue-text: #ffffff;
+
+  /* https://tailwind.simeongriggs.dev/cyan/67CDFD avec 12 color shades */
+  --cyan0: #F5FCFF;
+  --cyan50: #F0FAFF;
+  --cyan100: #E1F5FF;
+  --cyan200: #C3EBFE;
+  --cyan300: #A4E1FE;
+  --cyan400: #86D8FD;
+  --cyan500: #67CDFD;
+  --cyan: #67CDFD;
+  --cyan600: #22B7FC;
+  --cyan700: #0391D3;
+  --cyan800: #02618D;
+  --cyan900: #013046;
+
+  /* https://tailwind.simeongriggs.dev/indigo/67CDFD avec 12 color shades */
+  --indigo0: #F5FCFF;
+  --indigo50: #E4E9F6;
+  --indigo100: #C6CFEB;
+  --indigo200: #8DA0D8;
+  --indigo300: #5873C6;
+  --indigo400: #354F9C;
+  --indigo500: #223263;
+  --indigo: #223263;
+  --indigo600: #1B2850;
+  --indigo700: #151F3D;
+  --indigo800: #0D1326;
+  --indigo900: #070A13;
+
+  /* https://tailwind.simeongriggs.dev/grey/808080 avec 12 color shades */
+  --grey0: #f7f7f7;
+  --grey50: #f2f2f2;
+  --grey100: #e6e6e6;
+  --grey200: #cccccc;
+  --grey300: #b3b3b3;
+  --grey400: #999999;
+  --grey500: #808080;
+  --grey: #808080;
+  --grey600: #666666;
+  --grey700: #4d4d4d;
+  --grey800: #333333;
+  --grey900: #1a1a1a;
+
+
+  /* https://tailwind.simeongriggs.dev/green/3DD598 avec 12 color shades */
+  --green0: #F2FCF8;
+  --green50: #EAFAF4;
+  --green100: #D9F7EB;
+  --green200: #AFEED5;
+  --green300: #8AE6C1;
+  --green400: #64DDAD;
+  --green500: #3DD598;
+  --green: #3DD598;
+  --green600: #27B47C;
+  --green700: #1D865C;
+  --green800: #13583C;
+  --green900: #0A2E20;
+
+  /* https://tailwind.simeongriggs.dev/yellow/fff713 avec 12 color shades */
+  --yellow0: #FFFEF0;
+  --yellow50: #FFFEE5;
+  --yellow100: #FFFDD1;
+  --yellow200: #FFFC9E;
+  --yellow300: #FFFA70;
+  --yellow400: #FFF942;
+  --yellow500: #FFF713;
+  --yellow: #FFF713;
+  --yellow600: #DBD400;
+  --yellow700: #A39E00;
+  --yellow800: #6B6800;
+  --yellow900: #383600;
+
+  /* https://tailwind.simeongriggs.dev/orange/FF6D13 avec 12 color shades */
+  --orange0: #FFF6F0;
+  --orange50: #FFEFE5;
+  --orange100: #FFE3D1;
+  --orange200: #FFC39E;
+  --orange300: #FFA770;
+  --orange400: #FF8B42;
+  --orange500: #FF6D13;
+  --orange: #FF6D13;
+  --orange600: #DB5400;
+  --orange700: #A33F00;
+  --orange800: #6B2900;
+  --orange900: #381600;
+
+  /* https://tailwind.simeongriggs.dev/red/F0142F avec 12 color shades */
+  --red0: #FEF1F2;
+  --red50: #FDE7EA;
+  --red100: #FCCFD4;
+  --red200: #F99FAA;
+  --red300: #F67483;
+  --red400: #F34458;
+  --red500: #F0142F;
+  --red: #C50D22;
+  --red600: #C50D22;
+  --red700: #95091A;
+  --red800: #600611;
+  --red900: #300308;
+
+
+
+  --form-border-radius: 0.375rem;
+  --form-border-width: 1px;
+  --form-ring-shadow: 0 0 1px 5px #eee;
+
+  --button-border-width: 2px;
+
+  --transition-border: border-color 0.3s ease;
+  --transition-color: color 0.3s ease;
+  --transition-transform: transform 0.3s ease;
+  --transition-shadow: box-shadow 0.3s ease;
+  --transition-background: background-color 0.3s ease;
+  --transition-top: top .3s ease;
+  /* navbar */
+  --menu-height: 50px;
+  --submenu-height: 50px;
+
+  /* footer */
+  --footer-height: 40px;
+
+  /* for select-custom */
+  --input-height: 3.5rem;
+  --option-height: 2.5rem;
+  --dropdown-border-radius: 0.75rem;
+  --dropdown-box-shadow: 0 0 2px #ccc;
+
+  /* for input range */
+  --range-input-height: 36px;
+  --range-track-height: 8px;
+
+  --form-group-margin-bottom: 2.5rem;
+  /* séparation entre 2 éléments de formulaires de type 2 cols */
+  --form-gap: 50px;
+  /* séparation entre le formulaire et la carte */
+  --form-map-gap: 8%;
+  --form-gap-multicols: 15px;
+
+  --map-border-radius: 8px;
+  --map-box-shadow: 0 0 2px #aaa;
+
+  --tooltip-border-radius: 5px;
+  --tooltip-color: var(--primary-color-light);
+  --tooltip-text-color: white;
+  --tooltip-font-size: 12px;
+  --tooltip-move: 4px;
+
+  --h1-margin: 3.33rem;
+  --content-horizontal-padding: 3.5rem;
+
+  --space: 0.8rem;
+  --half-space: .4rem;
+
+  --sidebar-bg-color: var(--almost-white);
+  --sidebar-padding: 0.8rem;
+  --sidebar-item-padding: 0.4rem;
+  /* --sidebar-padding / 2 */
+  --sidebar-exceeding: 20px;
+
+  /* mini-file-manager */
+  --background-color: rgba(255, 255, 255, .75);
+
+
+  @media (max-width: 1440px) {
+    --form-gap: 15px;
+    --form-map-gap: 15px;
+    --content-horizontal-padding: 1rem;
+  }
+}

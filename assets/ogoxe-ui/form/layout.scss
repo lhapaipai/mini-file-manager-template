@@ -1,0 +1,215 @@
+.header-with-btns {
+    display: flex;
+    flex-wrap: wrap;
+    margin: var(--h1-margin) 0;
+    min-height: 34px;
+
+    h1 {
+        margin: 0 !important;
+    }
+
+    .submission-btns {
+        margin-left: auto;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+
+div.form-group {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0 var(--form-group-margin-bottom);
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    >label,
+    >.label {
+        display: block;
+        margin: 0px 0 1.1rem 1.7rem;
+    }
+
+    >input {
+        display: block;
+    }
+
+    .help-text,
+    .input-error {
+        margin: 0.5rem 0 0.5rem 0;
+        padding-left: 0;
+        min-height: auto;
+    }
+
+    >button {
+        margin: var(--space) 0 0 0;
+        align-self: flex-start;
+    }
+
+    p {
+        padding-left: 1rem;
+        min-height: var(--input-height);
+    }
+
+    .checks-inline,
+    .checks-block {
+        display: flex;
+        flex-wrap: wrap;
+
+        >* {
+            margin-right: 1.5rem;
+        }
+
+        label {
+            margin-left: .25rem;
+        }
+    }
+
+    .checks-inline {
+        align-items: center;
+
+        @media (max-width: 500px) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    .checks-inline-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: var(--space);
+
+        label {
+            margin-left: .25rem;
+        }
+    }
+
+    .checks-block {
+        flex-direction: column;
+
+        >* {
+            margin: var(--half-space) 0;
+        }
+    }
+}
+
+/* two-cols with label
+<div class="two-cols">
+    {{ form_row(form.contacts) }}
+    {{ form_row(form.contactGroups) }}
+</div>
+*/
+
+.two-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space);
+    margin-bottom: var(--form-group-margin-bottom);
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &>.form-group {
+        flex: 1;
+        width: 100%;
+        text-overflow: ellipsis;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    @media (max-width: 900px) {
+        gap: 0px;
+        grid-template-columns: 1fr;
+
+        &>.form-group {
+
+            &:not(:last-of-type) {
+                margin-bottom: var(--form-group-margin-bottom);
+            }
+        }
+    }
+}
+
+.form-group {
+
+    /* two-cols without label
+  <div class="form-group">
+      <label>Coordonnées (sélectionnez sur la carte)</label>
+      <div class="two-cols">
+          {{ form_widget(form.latitude) }}
+          {{ form_widget(form.longitude) }}
+      </div>
+  </div>
+*/
+    .two-cols {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-top: 0;
+        margin-bottom: 0;
+        gap: var(--space);
+
+        &>* {
+            width: 100%;
+        }
+
+        @media (max-width: 900px) {
+            gap: 15px;
+        }
+    }
+
+    .multi-cols {
+        display: flex;
+
+        &>* {
+            &:not(:first-child) {
+                margin-left: var(--space);
+            }
+
+            width: 0;
+            flex: 1;
+        }
+
+        &:not(:last-of-type) {
+            margin-bottom: var(--space);
+        }
+    }
+
+    .thumbnail {
+        margin: 0.5rem 0;
+    }
+
+    table {
+        width: auto;
+    }
+
+    input {
+
+        &.house-number {
+            flex: 0 0 70px;
+        }
+
+        &.post-code {
+            flex: 0 0 140px;
+        }
+    }
+}
+
+.submission-btns {
+    margin: var(--form-group-margin-bottom) 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    &>* {
+        margin-left: 1rem;
+
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+
+    &.between {
+        justify-content: space-between;
+    }
+}

@@ -1,0 +1,166 @@
+/****************************
+ * Text - Textarea - Select *
+ ****************************/
+
+/*
+before the js is loaded we want the reserved slot to have the same size 
+*/
+.ogoxe-input-text,
+.ogoxe-select {
+  height: var(--input-height);
+}
+
+.ogoxe-textarea {
+  padding: 0.9rem 1rem;
+}
+
+.ogoxe-input-with-left-helper,
+.ogoxe-input-with-right-helper {
+    display: inline-flex;
+    position: relative;
+    width: 100%;
+
+    i {
+        color: var(--primary-color200);
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: var(--transition-color);
+
+        &.prev {
+            left: 1rem;
+        }
+
+        &.next {
+            right: 1rem;
+        }
+    }
+
+    &:hover {
+
+        i {
+            color: var(--primary-color300);
+        }
+    }
+
+    input {
+
+        &:hover+i {
+            color: var(--primary-color300);
+        }
+
+        &:focus+i {
+            color: var(--primary-color);
+        }
+    }
+}
+
+.ogoxe-input-with-left-helper {
+
+    input {
+        padding-left: 3rem;
+    }
+}
+
+.ogoxe-input-with-right-helper {
+
+    input {
+        padding-right: 3rem;
+    }
+}
+
+.ogoxe-input-text,
+.ogoxe-select,
+.ogoxe-textarea,
+select[data-ogoxe-select-custom] {
+  font-family: inherit;
+  appearance: none;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: var(--form-border-radius);
+  border: var(--form-border-width) solid var(--blue-gray-lighter);
+  background-color: #ffffff;
+  transition: var(--transition-border), var(--transition-shadow);
+  width: 100%;
+  text-overflow: ellipsis;
+
+  &:hover {
+    border-color: var(--blue-gray-light);
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+  }
+  &:focus {
+    border-color: var(--primary-color);
+    box-shadow: var(--form-ring-shadow);
+    outline: none;
+  }
+
+  &.border-transparent {
+    border-color: transparent;
+  }
+
+  &.is-invalid {
+    border-color: var(--red);
+  }
+
+  .with-a11y &:focus {
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px #0b2aa1;
+    outline: 0;
+    border-radius: var(--form-border-radius);
+  }
+
+  &:disabled,
+  &[readonly] {
+    background-color: var(--almost-white);
+    cursor: not-allowed;
+    border-color: var(--blue-gray-lighter);
+    pointer-events: none;
+
+    &:focus {
+      border-color: var(--blue-gray-lighter);
+      box-shadow: none;
+      outline: none;
+    }
+  }
+}
+
+.ogoxe-select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23333333' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  background-size: 1.5rem 1.5rem;
+  background-position: right 0.5rem center;
+  background-repeat: no-repeat;
+  padding-right: 2.5rem;
+}
+
+/* Firefox Only : hack for select during loading time before displaying none */
+@-moz-document url-prefix() {
+  select[data-ogoxe-select-custom] {
+    padding-left: calc(1rem - 4px);
+  }
+}
+
+.ogoxe-input-with-suffix,
+.ogoxe-select-with-suffix {
+  position: relative;
+
+  .suffix {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--blue-gray);
+    pointer-events: none;
+  }
+}
+
+.ogoxe-input-with-suffix {
+
+  .suffix {
+    right: 15px;
+  }
+}
+
+.ogoxe-select-with-suffix {
+
+  .suffix {
+    right: 50px;
+  }
+}

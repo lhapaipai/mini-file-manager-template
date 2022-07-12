@@ -1,0 +1,66 @@
+<p>Pour les sources, voir le fichier <code>assets/ui/form/select-custom.html</code> car l'onglet HTML rend également le
+    HTML généré par la classe SelectCustom.</p>
+
+<div class="storybook-grid-cols">
+    <div>
+        <h4>simple</h4>
+        <select ref="select" class="ogoxe-select" name="select-simple" data-select-custom
+            data-select-custom-class-prefix="ogoxe-" placeholder="Rayon d'action">
+            <option value="2">500m</option>
+            <option value="3">1km</option>
+            <option value="4" selected="selected">2km</option>
+            <option value="6">5km</option>
+        </select>
+    </div>
+    <div>
+        <h4>avec input invisible</h4>
+        <select ref="select" class="ogoxe-select" name="select-simple" data-select-custom
+            data-select-custom-class-prefix="ogoxe-" data-select-custom-hide-inputs placeholder="Rayon d'action">
+            <option value="2">500m</option>
+            <option value="3">1km</option>
+            <option value="4" selected="selected">2km</option>
+            <option value="6">5km</option>
+        </select>
+    </div>
+    <div>
+        <h4>désactivé</h4>
+        <select ref="select" class="ogoxe-select" name="select-simple" data-select-custom
+            data-select-custom-class-prefix="ogoxe-" data-select-custom-readonly placeholder="Rayon d'action">
+            <option value="2">500m</option>
+            <option value="3">1km</option>
+            <option value="4" selected="selected">2km</option>
+            <option value="6">5km</option>
+        </select>
+    </div>
+    <div>
+        <h4>avec recherche</h4>
+        <select ref="select" class="ogoxe-select" name="select-simple" data-select-custom
+            data-select-custom-class-prefix="ogoxe-" data-select-custom-searchable placeholder="Rayon d'action">
+            <option value="2">500m</option>
+            <option value="3">1km</option>
+            <option value="4" selected="selected">2km</option>
+            <option value="6">5km</option>
+        </select>
+    </div>
+    <div>
+        <h4>multiple</h4>
+        <select ref="select" class="ogoxe-select" name="select-simple" data-select-custom
+            data-select-custom-class-prefix="ogoxe-" placeholder="Rayon d'action" multiple>
+            <option value="2">500m</option>
+            <option value="3">1km</option>
+            <option value="4" selected="selected">2km</option>
+            <option value="6">5km</option>
+        </select>
+    </div>
+    <div>
+        <h4>multiple avec tags</h4>
+        <select ref="select" class="ogoxe-select" name="select-simple" data-select-custom
+            data-select-custom-show-selection-as-tags data-select-custom-class-prefix="ogoxe-"
+            placeholder="Rayon d'action" multiple>
+            <option value="2">500m</option>
+            <option value="3">1km</option>
+            <option value="4" selected="selected">2km</option>
+            <option value="6">5km</option>
+        </select>
+    </div>
+</div>

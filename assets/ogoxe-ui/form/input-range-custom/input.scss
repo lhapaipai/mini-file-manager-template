@@ -1,0 +1,86 @@
+.ogoxe-input-range-custom {
+  /* Lors de l'analyse d'une règle CSS, si un sélecteur n'est pas valide c'est le bloc
+   de déclaration tout entier qui est ignoré, c'est pour cette raison que l'on ne peut
+    pas regrouper les sélecteurs en présence de préfixes propriétaires et qu'il faut 
+    donc dupliquer les règles.
+  */
+  position: relative;
+  z-index: 1;
+
+  /* curseur */
+  input[type="range"] {
+
+    /* chrome */
+    &::-webkit-slider-thumb {
+      width: var(--range-input-height);
+      height: inherit;
+      box-sizing: border-box;
+      border-radius: 50%;
+      background: var(--primary-color-dark);
+      cursor: pointer;
+      position: relative;
+      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+
+      &:hover {
+        transform: scale(0.7);
+      }
+
+      transform: scale(0.5);
+      border-width: 0;
+    }
+
+    /* on définit la zone réactive aux événements de la souris pour déplacer le curseur
+       le long de la timeline, pas la timeline en elle-meme qui est beaucoup moins haute */
+    &::-webkit-slider-runnable-track {
+      height: var(--range-input-height);
+    }
+
+    /* firefox */
+    &::-moz-range-thumb {
+      width: var(--range-input-height);
+      height: inherit;
+      box-sizing: border-box;
+      border-radius: 50%;
+      background: var(--primary-color-dark);
+      cursor: pointer;
+      position: relative;
+      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: scale(0.5);
+
+      &:hover {
+        transform: scale(0.7);
+      }
+    }
+
+    &:active::-moz-range-thumb {
+      transform: scale(0.8);
+    }
+
+    &::-moz-range-track {
+      background: none;
+      height: var(--range-input-height);
+    }
+
+    /* edge */
+    &::-ms-thumb {
+      width: var(--range-input-height);
+      height: inherit;
+      box-sizing: border-box;
+      border-radius: 50%;
+      background: var(--primary-color-dark);
+      cursor: pointer;
+      position: relative;
+      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: scale(0.5);
+
+      &:hover {
+        transform: scale(0.7);
+      }
+    }
+
+    &::-ms-track {
+      background: none;
+      height: var(--range-input-height);
+    }
+  }
+}

@@ -1,0 +1,63 @@
+/**********
+ * Toggle *
+ **********/
+
+.ogoxe-toggle {
+  box-sizing: border-box;
+  appearance: none;
+  outline: none;
+  height: 18px;
+  width: 30px;
+  border-radius: 0.75rem;
+  display: inline-block;
+  position: relative;
+  margin: 0 0.25rem 0 0;
+  border: var(--form-border-width) solid var(--blue-gray-lighter);
+  background-color: white;
+  cursor: pointer;
+  line-height: 18px;
+  vertical-align: -25%;
+  /* transition: all .15s ease; */
+  transition: var(--transition-border), var(--transition-shadow);
+
+  &:hover {
+    border-color: var(--blue-gray-light);
+
+    &::after {
+      border: 1px solid var(--blue-gray-light);
+    }
+  }
+
+  &:focus {
+    box-shadow: var(--form-ring-shadow);
+  }
+
+  &::after {
+    box-sizing: border-box;
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: calc(18px - 2 * var(--form-border-width) - 6px);
+    height: calc(18px - 2 * var(--form-border-width) - 6px);
+    border-radius: 50%;
+    background-color: var(--blue-gray-lighter);
+    transition: all 0.15s cubic-bezier(0.5, 0.1, 0.75, 1.35);
+    border: 1px solid var(--blue-gray-lighter);
+  }
+
+  &:checked {
+    background-color: var(--blue-gray-lighter);
+    border: 1px solid var(--blue-gray-light);
+
+    &::after {
+      background-color: var(--primary-color-dark);
+      transform: translateX(12px);
+      border: 1px solid var(--primary-color-dark);
+    }
+  }
+
+  .with-a11y &:focus {
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px #0b2aa1;
+  }
+}

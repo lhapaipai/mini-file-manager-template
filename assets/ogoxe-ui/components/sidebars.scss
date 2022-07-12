@@ -1,0 +1,152 @@
+.sidebar-container {
+  position: relative;
+  background-color: var(--sidebar-bg-color);
+}
+
+.ogoxe-button.collapse-button {
+  top: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1020;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: var(--transition-top), var(--transition-transform), var(--transition-color), var(--transition-background), var(--transition-shadow), var(--transition-border);
+  padding: 0;
+  color: var(--blue-gray-light);
+
+
+  &.right {
+    right: -15px;
+    transform: rotate(180deg);
+  }
+
+  &.left {
+    left: -15px;
+  }
+
+  &.top-right {
+    top: -15px;
+    right: 10px;
+    transform: rotate(90deg);
+  }
+
+  &.top-left {
+    top: -15px;
+    left: 10px;
+    transform: rotate(90deg);
+  }
+}
+
+body.sidebar-navigation-collapsed #navigation-container,
+body.sidebar-infos-collapsed #infos-container {
+  .ogoxe-button.collapse-button {
+
+    &.right {
+      transform: translateX(25px) rotate(0deg);
+    }
+
+    &.left {
+      transform: translateX(-25px) rotate(180deg);
+    }
+
+    &.top-left,
+    &.top-right {
+      transform: translateY(-25px);
+    }
+  }
+}
+
+
+.resizer {
+  position: absolute;
+  touch-action: none;
+  z-index: 1010;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-color);
+    opacity: 0;
+    transition: .3s;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+
+  &.right,
+  &.left {
+    top: 0;
+    width: 20px;
+    height: 100%;
+    cursor: ew-resize;
+
+    &::after {
+      top: 0;
+      transform: scaleX(0);
+    }
+
+    &:hover::after {
+      transform: scaleX(.2);
+    }
+  }
+
+  &.top,
+  &.bottom {
+    left: 0;
+    height: 20px;
+    width: 100%;
+    cursor: ns-resize;
+
+    &::after {
+      left: 0;
+      transform: scaleY(0);
+    }
+
+    &:hover::after {
+      transform: scaleY(.2);
+    }
+  }
+
+  .sidebar-container.collapsed & {
+    pointer-events: none;
+  }
+
+  &.right {
+    right: -10px;
+
+    &::after {
+      right: 0;
+    }
+  }
+
+  &.left {
+    left: -10px;
+
+    &::after {
+      left: 0;
+    }
+  }
+
+  &.top {
+    top: -10px;
+
+    &::after {
+      top: 0;
+    }
+  }
+}
+
+body.sidebar-navigation-collapsed #navigation-container,
+body.sidebar-infos-collapsed #infos-container {
+  .resizer {
+    display: none;
+    pointer-events: none;
+  }
+}

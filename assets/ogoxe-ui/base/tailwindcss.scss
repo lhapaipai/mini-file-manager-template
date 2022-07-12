@@ -1,0 +1,43 @@
+.ml-auto {
+  margin-left: auto;
+}
+.mr-auto {
+  margin-right: auto;
+}
+
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.red-color {
+  color: var(--red);
+}
+
+.orange-color {
+  color: var(--orange);
+}
+
+.green-color {
+  color: var(--green);
+}
+
+.primary-color {
+  color: var(--primary-color);
+}
+
+.secondary-color {
+  color: var(--secondary-color);
+}
+
+.mobile-only {
+  @include desktop-only {
+      display: none;
+  }
+}
+
+.desktop-only {
+  @include mobile-only {
+      display: none;
+  }
+}

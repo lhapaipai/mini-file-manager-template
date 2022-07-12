@@ -1,0 +1,84 @@
+.ogoxe-tabs {
+  position: relative;
+  --labels-height: 36px;
+
+  &-labels {
+    display: flex;
+    position: relative;
+    height: var(--labels-height);
+
+    .tab-label {
+      padding: 1rem 1rem;
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--grey300);
+      transition: var(--transition-color);
+      cursor: pointer;
+      position: relative;
+      z-index: 2;
+      border-radius: 8px 8px 0 0;
+
+      &:hover {
+        color: var(--primary-color-dark);
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-color: transparent;
+        border-radius: 8px 8px 0 0;
+        pointer-events: none;
+      }
+
+      &.active {
+        opacity: 1;
+        color: var(--primary-color);
+        background-color: white;
+
+        &::after {
+          box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+        }
+      }
+
+    }
+  }
+
+  &-contents {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+    border-radius: 0px 8px 8px 8px;
+
+    &>* {
+      display: none;
+      padding: var(--space);
+
+      &.active {
+        display: block;
+      }
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: var(--labels-height);
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    z-index: 0;
+    background-color: transparent;
+    border-radius: 0px 8px 8px 8px;
+    pointer-events: none;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  }
+}

@@ -1,0 +1,332 @@
+html {
+  font-family: Poppins, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+h1 {
+  color: var(--indigo500);
+  margin: var(--h1-margin) 0 1.5rem;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--indigo500);
+  margin: 1.5rem 0 0.75rem;
+}
+
+label,
+.label {
+  color: var(--indigo500);
+}
+
+h1 {
+  font-size: 1.66rem;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 1.33rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+h5 {
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+h6 {
+  font-size: 1.1rem;
+  font-weight: 500;
+
+}
+
+p {
+  margin: 1rem 0;
+  line-height: 1.2rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.disabled,
+.todo {
+  opacity: 0.5;
+  pointer-events: none;
+  user-select: none;
+  cursor: default;
+}
+
+.deprecated {
+  background-color: var(--red50);
+  color: var(--red500);
+  opacity: 0.5;
+  pointer-events: none;
+  user-select: none;
+}
+
+.background-dashed {
+  background: repeating-linear-gradient(-45deg, rgba(0, 0, 0, .1), rgba(0, 0, 0, .1) 2px, transparent 2px, transparent 4px);
+}
+
+.comment {
+  font-size: 1.16rem;
+  color: var(--blue-gray-light);
+}
+
+
+
+.danger {
+  color: var(--red);
+}
+
+a {
+  color: var(--indigo500);
+  text-decoration: none;
+  transition: var(--transition-color);
+
+}
+
+label[for] {
+  cursor: pointer;
+}
+
+strong,
+b {
+  font-weight: bold;
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+sup {
+  vertical-align: super;
+}
+
+sub {
+  vertical-align: sub;
+}
+
+code {
+  background-color: var(--grey100);
+  border-radius: 3px;
+  padding: 0.1rem 0.2rem;
+  border: 1px solid var(--grey200);
+}
+
+blockquote {
+  position: relative;
+  padding: 1px 4rem 1px 4rem;
+  background-color: var(--primary-color50);
+
+
+  &::before,
+  &::after {
+    font-size: 3.5rem;
+    position: absolute;
+    font-family: Georgia;
+    color: var(--primary-color);
+  }
+
+  &::before {
+    content: "“";
+    top: -1rem;
+    left: 1rem;
+  }
+
+  &::after {
+    content: "”";
+    bottom: -2rem;
+    right: 1rem;
+  }
+
+  p {
+    margin: 2rem 0 2rem 0;
+  }
+
+}
+
+pre {
+  background-color: var(--grey50);
+  padding: var(--space);
+  margin: var(--space) 0;
+  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+}
+
+ul {
+  list-style-type: none !important;
+  margin-left: 1rem;
+
+  li::before {
+    content: "\2022";
+    color: var(--primary-color);
+    font-weight: 700;
+    display: inline-block;
+    width: 1rem;
+    margin-left: -.5rem;
+    transform: scale(1.5);
+  }
+}
+
+
+
+.info {
+  font-style: italic;
+  color: var(--primary-color200);
+  font-weight: normal;
+}
+
+.date {
+  font-size: .85rem;
+
+}
+
+.ogoxe-navbar {
+  font-size: 1.42rem;
+
+  .submenu {
+    font-size: 1rem;
+  }
+}
+
+.sidebar {
+
+  a {
+    font-weight: 600;
+  }
+}
+
+.help-text,
+.form-group .help-text {
+  color: var(--grey400);
+  font-weight: 400;
+}
+
+.optional {
+  font-weight: 400;
+  font-style: italic;
+}
+
+.form-group {
+
+  label,
+  .label {
+    font-size: 1.33rem;
+    font-weight: 600;
+  }
+
+  .form-group {
+
+    label,
+    .label {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+  }
+
+  .one-checkbox,
+  .checks-inline,
+  .checks-inline-grid,
+  .checks-block,
+  .radio {
+    label {
+      font-size: inherit;
+      font-weight: normal;
+      cursor: pointer;
+    }
+  }
+}
+
+.alert-list,
+.table-list,
+.listing {
+
+  .header {
+    color: var(--indigo500);
+    font-weight: 600;
+  }
+}
+
+/* validation form error text */
+.input-error {
+  color: var(--red);
+}
+
+.ogoxe-layers {
+  font-size: 1rem;
+
+  &-section-header {
+
+    .title {
+      font-weight: 600;
+      color: var(--indigo500);
+    }
+  }
+
+  &-section-item {
+
+    span {
+      color: var(--text-default-color);
+    }
+  }
+}
+
+.sidebar {
+  .header {
+    p {
+      font-size: 1.16rem;
+      color: var(--grey700);
+    }
+
+    .key-values {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+#footer {
+  font-size: 1.16rem;
+
+  @media (max-width: 1500px) {
+    .details {
+      font-size: 1rem;
+    }
+  }
+}
+
+.key-values {
+
+  [class^="fe-"]::before,
+  [class*=" fe-"]::before {
+    font-size: .9rem;
+  }
+}
+
+.sidebar {
+  .key-values {
+    font-size: 1.1rem;
+  }
+
+  .record-box {
+    .key-values {
+      font-size: 1rem;
+    }
+  }
+
+}

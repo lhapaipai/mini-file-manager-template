@@ -1,0 +1,260 @@
+.marker {
+  --marker-size: 50px;
+  --marker-height: var(--marker-size);
+  --marker-width: calc(var(--marker-size) * 0.7);
+  cursor: pointer;
+
+  will-change: transform;
+  position: relative;
+  width: var(--marker-width);
+  height: var(--marker-height);
+  display: block;
+
+  &.marker-cluster .text {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 25%;
+    z-index: 5;
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+  &>div {
+    transition: transform 0.1s ease;
+  }
+
+  &:active>div {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+  }
+
+
+
+  &>div,
+  i {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .inactive {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 4;
+    top: 0;
+    left: 0;
+
+    &::before {
+      content: '\e82a';
+      color: var(--red);
+    }
+  }
+
+  /* marker */
+  &>div::before {
+    content: '\e837';
+    z-index: 1;
+    color: var(--cyan);
+  }
+
+  &:hover>div {
+
+    /* marker */
+    &::before {
+      color: var(--indigo);
+    }
+
+    /* ovale */
+    &::after {
+      color: var(--cyan200);
+    }
+  }
+
+  &.selected {
+
+    /* marker */
+    &>div::before {
+      color: var(--indigo);
+    }
+  }
+
+  &.no-alert {
+
+    /* marker */
+    &>div::before {
+      color: var(--green);
+    }
+
+    &:hover {
+
+      /* ovale */
+      &>div::after {
+        color: var(--green200);
+      }
+    }
+  }
+
+  &.alert-1 {
+
+    /* marker */
+    &>div::before {
+      color: var(--yellow);
+    }
+
+    &>div:hover {
+
+      /* ovale */
+      &::after {
+        color: var(--yellow200);
+      }
+    }
+
+  }
+
+  &.alert-2 {
+
+    /* marker */
+    &>div::before {
+      color: var(--orange);
+    }
+
+    &:hover {
+
+      /* ovale */
+      &>div::after {
+        color: var(--orange200);
+      }
+    }
+
+  }
+
+  &.alert-3 {
+
+    /* marker */
+    &>div::before {
+      color: var(--red);
+    }
+
+    &:hover {
+
+      /* ovale */
+      &>div::after {
+        color: var(--red200);
+      }
+    }
+
+  }
+
+  &.marker-cluster {
+
+    &:hover {
+
+      i::before
+
+      /* icon */
+        {
+        color: var(--cyan);
+      }
+    }
+  }
+
+  &>div::after
+
+  /* ovale */
+    {
+    content: '\e828';
+    color: white;
+    z-index: 2;
+  }
+
+  i::before
+
+  /* icon */
+    {
+    z-index: 3;
+    color: var(--indigo);
+  }
+
+  &>div::before,
+  &>div::after,
+  .inactive::before,
+  i::before,
+  i::after {
+    transition: var(--transition-color);
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-family: "fontello";
+    font-style: normal;
+    font-weight: normal;
+    /* For safety - reset parent styles, that can break glyph codes*/
+    font-variant: normal;
+    text-transform: none;
+    margin: 0px;
+    display: inline-block;
+    text-decoration: inherit;
+    /* fix buttons height, for twitter bootstrap */
+    line-height: 1em;
+    /* Animation center compensation - margins should be symmetric */
+    /* remove if not needed */
+    /* you can be more comfortable with increased icons size */
+    font-size: var(--marker-size) !important;
+    /* Font smoothing. That was taken from TWBS */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  &>div::before,
+  &>div::after,
+  i::before {
+    width: auto !important;
+  }
+
+  i::after
+
+  /* shadow */
+    {
+    left: 50%;
+    transform: translateX(-50%);
+
+    content: '';
+    background-image: url(../../images/map/markers/marker-shadow-centered.png);
+    width: var(--marker-size);
+    height: var(--marker-size);
+    background-size: cover;
+    pointer-events: none;
+  }
+
+  &.disabled.disabled {
+    opacity: 1;
+    pointer-events: auto;
+    user-select: auto;
+
+    /* marker */
+    &>div::before {
+      content: '\e827';
+      color: var(--grey200);
+    }
+
+    &:hover>div {
+
+      /* marker */
+      &::before {
+        color: var(--grey400);
+      }
+
+      /* ovale */
+      &::after {
+        color: white;
+      }
+    }
+
+    i::after {
+      content: none;
+    }
+  }
+}

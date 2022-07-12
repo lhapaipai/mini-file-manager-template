@@ -1,0 +1,34 @@
+body.base:not(.with-aside) {
+  #ogoxe-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1010;
+  }
+
+  #footer {
+    position: sticky;
+    bottom: 0;
+    z-index: 1000;
+  }
+
+  #main {
+    overflow: auto;
+    position: relative;
+    padding: var(--sidebar-padding) var(--content-horizontal-padding);
+    display: flex;
+    min-height: calc(100vh - var(--menu-height) - var(--footer-height));
+  }
+
+  #main-content {
+    max-width: 1520px;
+    margin: 3rem auto;
+  }
+
+  @media (max-width: 1024px) {
+    #footer {
+      position: relative;
+      bottom: auto;
+      z-index: auto;
+    }
+  }
+}
