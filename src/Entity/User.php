@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Pentatrion\UploadBundle\Entity\UploadedFile;
+
 use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
 

@@ -1,6 +1,11 @@
-import { filePicker } from 'mini-file-manager/src/index'
-// import '../../../mini-file-manager/dist/mini-file-manager.css'
+import { entityFormFilePicker, textFormFilePicker } from "../../mini-file-manager/src/index";
+// import { textFormFilePicker } from "mini-file-manager";
+// import "mini-file-manager/dist/mini-file-manager.css";
 
-document.querySelectorAll('[data-file-picker]').forEach(($filePicker) => {
-    filePicker($filePicker)
-})
+document.querySelectorAll("[data-text-form-file-picker").forEach((elt) => {
+  textFormFilePicker(elt);
+});
+
+document.querySelectorAll("[data-entity-form-file-picker").forEach((elt) => {
+  entityFormFilePicker(elt);
+});

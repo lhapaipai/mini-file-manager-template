@@ -3,11 +3,8 @@ import { resolve } from "path";
 import { unlinkSync, existsSync } from "fs";
 import vue from "@vitejs/plugin-vue";
 import postcssConfig from "./postcss.config.js";
-import Inspect from 'vite-plugin-inspect'
-import fs from "fs";
 
 import symfonyPlugin from 'vite-plugin-symfony';
-import copy from 'rollup-plugin-copy'
 
 export default defineConfig({
   plugins: [symfonyPlugin(), vue()],
@@ -42,11 +39,10 @@ export default defineConfig({
         "app": "./assets/app.js",
         "fileManager": "./assets/file-manager.js",
         "fileManagerModal": "./assets/file-manager-modal.js",
-        "form": "./assets/form.js",
+        "formFilePicker": "./assets/form-file-picker.js",
         "tinymce": "./assets/tinymce.js",
         "ckeditor": "./assets/ckeditor.js",
         "ogoxeTheme": "./assets/ogoxe-ui/app.js",
-        "formFilePicker": "./assets/form-file-picker.js"
       },
     },
   },

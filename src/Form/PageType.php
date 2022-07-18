@@ -3,31 +3,28 @@
 namespace App\Form;
 
 use App\Entity\Page;
-use App\Form\Type\FilesPickerType;
 use App\Form\Type\UploadedFileType;
-use App\Service\AppFileManagerHelper;
+use Pentatrion\UploadBundle\Form\EntitiesFilePickerType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Pentatrion\UploadBundle\Service\FileManagerHelperInterface;
 
 class PageType extends AbstractType
 {
-    private $appFileManagerHelper;
+    private $fileManagerHelper;
 
-    public function __construct(AppFileManagerHelper $appFileManagerHelper)
+    public function __construct(FileManagerHelperInterface $fileManagerHelper)
     {
-        $this->appFileManagerHelper = $appFileManagerHelper;
+        $this->fileManagerHelper = $fileManagerHelper;
     }
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
             ->add('title')
-            ->add('photos', FilesPickerType::class, [
-                'entry_type' => UploadedFileType::class,
-                'allow_add' => true,
-                'allow_delete' => true,
-                'fileManagerConfig' => $this->appFileManagerHelper->completeConfig([
+            ->add('photos', EntitiesFilePickerType::class, [
+                'fileManagerConfig' => $this->fileManagerHelper->completeConfig([
                     'entryPoints' => [
                         [
                             'label' => 'Uploads',
@@ -35,11 +32,7 @@ class PageType extends AbstractType
                             'origin' => 'public_uploads',
                         ]
                     ],
-                ]),
-                'filePickerConfig' => [
-                    'filter'        => 'small',
-                    'type'          => 'image'
-                ]
+                ])
             ]);
     }
 

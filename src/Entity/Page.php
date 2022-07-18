@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Pentatrion\UploadBundle\Entity\UploadedFile;
 use App\Repository\PageRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;

@@ -6,7 +6,7 @@ use App\Repository\UploadedFileRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=UploadedFileRepository::class)
+ * TODO ORM\Entity(repositoryClass=UploadedFileRepository::class)
  */
 class UploadedFile
 {
@@ -18,7 +18,7 @@ class UploadedFile
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=64)
+     * @ORM\Column(type="string", length=64, nullable=true)
      */
     private $mimeType;
 
@@ -33,7 +33,7 @@ class UploadedFile
     private $height;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $filename;
 
@@ -43,9 +43,14 @@ class UploadedFile
     private $directory;
 
     /**
-     * @ORM\Column(type="string", length=64)
+     * @ORM\Column(type="string", length=64, nullable=true)
      */
     private $origin;
+
+    public function isEmpty(): bool
+    {
+        return is_null($this->filename) && is_null($this->origin);
+    }
 
     public function getId(): ?int
     {
@@ -57,7 +62,7 @@ class UploadedFile
         return $this->mimeType;
     }
 
-    public function setMimeType(string $mimeType): self
+    public function setMimeType(?string $mimeType): self
     {
         $this->mimeType = $mimeType;
 
@@ -93,7 +98,7 @@ class UploadedFile
         return $this->filename;
     }
 
-    public function setFilename(string $filename): self
+    public function setFilename(?string $filename): self
     {
         $this->filename = $filename;
 
@@ -117,7 +122,7 @@ class UploadedFile
         return $this->origin;
     }
 
-    public function setOrigin(string $origin): self
+    public function setOrigin(?string $origin): self
     {
         $this->origin = $origin;
 

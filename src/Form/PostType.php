@@ -3,7 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Post;
-use Pentatrion\UploadBundle\Form\FilePickerLegacyType;
+use Pentatrion\UploadBundle\Form\TextFilePickerType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -15,7 +15,7 @@ class PostType extends AbstractType
         $builder
             ->add('title')
             ->add('description')
-            ->add('poster', FilePickerLegacyType::class, [
+            ->add('poster', TextFilePickerType::class, [
                 'fileManagerConfig' => [
                     'entryPoints' => [
                         [
@@ -31,12 +31,9 @@ class PostType extends AbstractType
                         'imageOptions' => [
                             'ratio' => 1
                         ]
-                    ]
+                    ],
+                    'multiple' => true
                 ],
-                'formPreviewConfig' => [
-                    'multiple' => true,
-                ]
-
             ]);
     }
 

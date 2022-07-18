@@ -15,12 +15,13 @@ nav.mfmt-nav {
   display: flex;
   justify-content: center;
   border-bottom: 1px solid #ccc;
-  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: .8rem;
 
   a {
     transition: color 0.3s ease;
     color: #666;
-    margin: 1rem 2rem;
+    margin: 2px 2rem;
     text-decoration: none;
 
     &:hover {

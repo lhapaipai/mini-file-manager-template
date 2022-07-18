@@ -2,6 +2,10 @@
 liip_imagine:
     # valid drivers options include "gd" or "gmagick" or "imagick"
     driver: "gd"
+
+    twig:
+        mode: lazy
+
     # define filters defined in pentatrion_upload.liip_filters
     filter_sets:
         small:

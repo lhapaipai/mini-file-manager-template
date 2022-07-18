@@ -10,7 +10,6 @@
   appearance: none;
   outline: 0;
   padding: 0;
-  color-adjust: exact;
   display: inline-block;
   background-origin: border-box;
   user-select: none;
@@ -27,7 +26,7 @@
   vertical-align: -25%;
   transition: var(--transition-border), var(--transition-shadow);
 
-  & + label {
+  &+label {
     cursor: pointer;
   }
 
@@ -58,7 +57,7 @@
     cursor: not-allowed;
     border-color: var(--blue-gray-lighter);
 
-    & + label {
+    &+label {
       color: var(--blue-gray-lighter);
       cursor: not-allowed;
     }

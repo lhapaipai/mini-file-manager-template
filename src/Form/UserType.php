@@ -3,42 +3,35 @@
 namespace App\Form;
 
 use App\Entity\User;
-use App\Form\Type\FilePickerType;
-use App\Service\AppFileManagerHelper;
+use Pentatrion\UploadBundle\Form\EntityFilePickerType;
+use Pentatrion\UploadBundle\Service\FileManagerHelperInterface;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class UserType extends AbstractType
 {
-    private $appFileManagerHelper;
+    private $fileManagerHelper;
 
-    public function __construct(AppFileManagerHelper $appFileManagerHelper)
+    public function __construct(FileManagerHelperInterface $fileManagerHelper)
     {
-        $this->appFileManagerHelper = $appFileManagerHelper;
+        $this->fileManagerHelper = $fileManagerHelper;
     }
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
             ->add('name')
-            ->add('avatar', FilePickerType::class, [
+            ->add('avatar', EntityFilePickerType::class, [
                 'required' => false,
-                'fileManagerConfig' => $this->appFileManagerHelper->completeConfig([
+                'fileManagerConfig' => [
                     'entryPoints' => [
                         [
                             'label' => 'Uploads',
                             'directory' => 'user',
                             'origin' => 'public_uploads',
                         ]
-                    ],
-                    'fileValidation' => [
-                        'mimeGroup' => 'image',
-                    ],
-                ]),
-                'filePickerConfig' => [
-                    'filter'        => 'small',
-                    'type'          => 'image'
+                    ]
                 ]
             ]);
     }
