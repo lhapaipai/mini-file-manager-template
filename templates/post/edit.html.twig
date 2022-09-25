@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Post{% endblock %}
+
+{% block body %}
+{{ form_start(form) }}
+{{ form_widget(form) }}
+<button class="penta-button">Save</button>
+{{ form_end(form) }}
+{% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+{% if theme != 'penta' %}
+{{ vite_entry_link_tags(theme ~ 'Theme') }}
+{% endif %}
+
+{{ vite_entry_link_tags('formFilePicker') }}
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+{% if theme != 'penta' %}
+{{ vite_entry_script_tags(theme ~ 'Theme') }}
+{% endif %}
+
+{{ vite_entry_script_tags('formFilePicker') }}
+{% endblock %}

@@ -1,0 +1,24 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build"
+    },
+    "license": "UNLICENSED",
+    "devDependencies": {
+        "@vitejs/plugin-vue": "^3.1.0",
+        "sass": "^1.54.8",
+        "vite": "^3.0",
+        "vite-plugin-symfony": "^0.6.0"
+    },
+    "dependencies": {
+        "dotenv": "^16.0.2",
+        "mini-file-manager": "link:../mini-file-manager",
+        "mini-notifier": "^0.6.0",
+        "pentatrion-lib": "^0.3.6",
+        "pentatrion-theme": "^0.2.2",
+        "simplebar": "^5.3.8",
+        "tinymce": "^6.1.2",
+        "vue": "^3.2.39"
+    }
+}

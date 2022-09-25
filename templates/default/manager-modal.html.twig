@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}File manager{% endblock %}
+
+{% block body %}
+<p>Thème :
+    <a href="{{ path('file_manager_modal') }}">Penta (défaut)</a>
+    {% for customTheme in themes %}
+    <a href="{{ path('file_manager_modal', {theme: customTheme }) }}">{{ customTheme }}</a>
+    {% endfor %}
+</p>
+
+<main class="main">
+    <button class="penta-button" id="file-picker"
+        data-minifilemanager="{{ fileManagerConfig | json_encode | e('html_attr') }}">Browse Files</button>
+    <p>Output</p>
+    <code><pre id="output"></pre></code>
+</main>
+{% endblock %}
+
+
+{% block stylesheets %}
+{{ parent() }}
+{% if theme != 'penta' %}
+{{ vite_entry_link_tags(theme ~ 'Theme') }}
+{% endif %}
+
+{{ vite_entry_link_tags('fileManagerModal') }}
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+{% if theme != 'penta' %}
+{{ vite_entry_script_tags(theme ~ 'Theme') }}
+{% endif %}
+{{ vite_entry_script_tags('fileManagerModal') }}
+{% endblock %}

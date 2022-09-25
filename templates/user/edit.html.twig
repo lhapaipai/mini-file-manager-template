@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit User{% endblock %}
+
+{% block body %}
+<h1>Edit User</h1>
+
+{{ form_start(form) }}
+{{ form_widget(form) }}
+<button class="btn">
+  save
+</button>
+{{ form_end(form) }}
+
+<a href="{{ path('user_index') }}">back to list</a>
+
+{% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+{% if theme != 'penta' %}
+{{ vite_entry_link_tags(theme ~ 'Theme') }}
+{% endif %}
+{{ vite_entry_link_tags('formFilePicker') }}
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+{% if theme != 'penta' %}
+{{ vite_entry_script_tags(theme ~ 'Theme') }}
+{% endif %}
+{{ vite_entry_script_tags('formFilePicker') }}
+{% endblock %}

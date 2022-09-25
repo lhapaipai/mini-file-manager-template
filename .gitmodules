@@ -1,0 +1,6 @@
+[submodule "extra/mini-file-manager"]
+	path = extra/mini-file-manager
+	url = https://github.com/lhapaipai/mini-file-manager.git
+[submodule "extra/upload-bundle"]
+	path = extra/upload-bundle
+	url = https://github.com/lhapaipai/upload-bundle.git

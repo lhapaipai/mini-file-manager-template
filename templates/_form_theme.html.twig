@@ -1,0 +1,112 @@
+{% use "form_div_layout.html.twig" %}
+
+{%- block widget_attributes -%}
+    {%- if not valid %}
+        {% set attr = attr|merge({class: (attr.class|default('') ~ ' is-invalid')|trim}) %}
+    {% endif -%}
+    id="{{ id }}" name="{{ full_name }}"
+    {%- if disabled %} disabled="disabled"{% endif -%}
+    {%- if required %} required="required"{% endif -%}
+    {{ block('attributes') }}
+{%- endblock widget_attributes -%}
+
+{%- block form_row -%}
+    {%- set widget_attr = {} -%}
+    {%- if help is not empty -%}
+        {%- set widget_attr = {attr: {'aria-describedby': id ~"_help"}} -%}
+    {%- endif -%}
+    <div{% with {attr: row_attr|merge({class: (row_attr.class|default('') ~ ' form-group')|trim})} %}{{ block('attributes') }}{% endwith %}>
+        {{- form_label(form) -}}
+        {{- form_widget(form, widget_attr) -}}
+        {{- form_errors(form) -}}
+        {{- form_help(form) -}}
+    </div>
+{%- endblock form_row -%}
+
+{%- block form_errors -%}
+    {%- if errors|length > 0 -%}
+    <div class="input-error">
+        {%- for error in errors -%}
+            <div>{{ error.message }}</div>
+        {%- endfor -%}
+    </div>
+    {%- endif -%}
+{%- endblock form_errors -%}
+
+{%- block form_widget_simple -%}
+  {%- set type = type|default('text') -%}
+  {%- if type == 'text' or type == 'textarea' or type == 'email' or type == 'password' -%}
+    {%- set attr = attr|merge({class: (attr.class|default('') ~ ' penta-input-text')|trim}) -%}
+  {%- endif -%}
+  {{ parent() }}
+{%- endblock form_widget_simple -%}
+
+{%- block textarea_widget -%}
+    {%- set attr = attr|merge({class: (attr.class|default('') ~ ' penta-textarea')|trim}) -%}
+    <textarea {{ block('widget_attributes') }}>{{ value }}</textarea>
+{%- endblock textarea_widget -%}
+
+{%- block checkbox_widget -%}
+    {%- set attr = attr|merge({class: (attr.class|default('') ~ ' penta-input-checkbox')|trim}) -%}
+    <input type="checkbox" {{ block('widget_attributes') }}{% if value is defined %} value="{{ value }}"{% endif %}{% if checked %} checked="checked"{% endif %} />
+{%- endblock -%}
+
+{%- block radio_widget -%}
+    {%- set attr = attr|merge({class: (attr.class|default('') ~ ' penta-input-radio')|trim}) -%}
+    <input type="radio" {{ block('widget_attributes') }}{% if value is defined %} value="{{ value }}"{% endif %}{% if checked %} checked="checked"{% endif %} />
+{%- endblock radio_widget -%}
+
+{%- block choice_widget_collapsed -%}
+    {%- set attr = attr|merge({class: (attr.class|default('') ~ ' penta-select')|trim}) -%}
+  {{ parent() }}
+{%- endblock choice_widget_collapsed -%}
+
+{%- block switch_widget -%}
+    {%- set attr = attr|merge({class: (attr.class|default('') ~ ' penta-toggle')|trim}) -%}
+    <input type="checkbox" {{ block('widget_attributes') }}{% if value is defined %} value="{{ value }}"{% endif %}{% if checked %} checked="checked"{% endif %} />
+{%- endblock switch_widget -%}
+
+
+{%- block uploaded_file_label -%}
+{%- endblock uploaded_file_label -%}
+
+
+{%- block entities_file_picker_widget -%}
+    {% if prototype is defined and not prototype.rendered %}
+        {%- set attr = attr|merge({'data-prototype': form_row(prototype) }) -%}
+    {% endif %}
+    {{- block('form_widget') -}}
+{%- endblock -%}
+
+{%- block entities_file_picker_label -%}
+    {{- block('form_label') -}}
+{%- endblock -%}
+
+{%- block entity_file_picker_widget -%}
+    {% if prototype is defined and not prototype.rendered %}
+        {%- set attr = attr|merge({'data-prototype': form_row(prototype) }) -%}
+    {% endif %}
+    <div {{ block('widget_container_attributes') }}>
+        {%- if form is rootform -%}
+            {{ form_errors(form) }}
+        {%- endif -%}
+        {{- form_widget(form.liipId) -}}
+        {{- form_widget(form.mimeGroup) -}}
+        {{- form_widget(form.mimeType) -}}
+        {{- form_widget(form.filename) -}}
+        {{- form_widget(form.directory) -}}
+        {{- form_widget(form.origin) -}}
+        {{- form_widget(form.imageWidth) -}}
+        {{- form_widget(form.imageHeight) -}}
+        {{- form_widget(form.type) -}}
+        {{- form_widget(form.size) -}}
+        {{- form_widget(form.updatedAt) -}}
+        {{- form_widget(form.icon) -}}
+        {{- form_widget(form.public) -}}
+        {{- form_rest(form) -}}
+    </div>
+{%- endblock -%}
+
+{%- block entity_file_picker_label -%}
+    {{- block('form_label') -}}
+{%- endblock -%}

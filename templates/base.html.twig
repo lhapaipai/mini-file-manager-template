@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <link rel="icon" href="data:;base64,iBORw0KGgo=">
+
+    {% block stylesheets %}
+    {{ vite_entry_link_tags('app') }}
+    {% endblock %}
+
+    {% block javascripts %}
+    {{ vite_entry_script_tags('app') }}
+    {% endblock %}
+</head>
+
+<body>
+    <nav class="mfmt-nav">
+        <div class="group">
+            <a href="{{ path('file_manager') }}">File Manager</a>
+            <a href="{{ path('file_manager_modal') }}">File Manager Modal</a>
+            <a href="{{ path('file_manager_preview') }}">File Manager with preview</a>
+
+        </div>
+        <div class="group">
+            <a href="{{ path('post_index') }}">Post : Text Form File Picker</a>
+            <a href="{{ path('user_index') }}">User : Entity Form File Picker</a>
+            <a href="{{ path('page_index') }}">Page : Entities Form File Picker</a>
+
+        </div>
+        <div class="group">
+            <a href="{{ path('welcome') }}">image</a>
+            <a href="{{ path('tinymce') }}">TinyMCE</a>
+            {# <a href="{{ path(' ckeditor') }}">CKeditor</a> #}
+        </div>
+    </nav>
+    {% block body %}{% endblock %}
+</body>
+
+</html>

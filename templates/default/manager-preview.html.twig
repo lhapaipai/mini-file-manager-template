@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}File manager{% endblock %}
+
+{% block body %}
+<p>Thème :
+  <a href="{{ path('file_manager_preview') }}">Penta (défaut)</a>
+  {% for customTheme in themes %}
+  <a href="{{ path('file_manager_preview', {theme: customTheme }) }}">{{ customTheme }}</a>
+  {% endfor %}
+</p>
+<p>
+  à la validation du gestionnaire de fichiers renvoie un callback qui peut être utilisé pour capturer la nouvelle
+  sélection
+</p>
+<main class="main">
+  <div id="file-manager-preview" data-minifilemanager="{{ fileManagerConfig | json_encode | e('html_attr') }}"></div>
+  <p>Output</p>
+  <pre id="output"></pre>
+
+</main>
+{% endblock %}
+
+
+{% block stylesheets %}
+{{ parent() }}
+{% if theme != 'penta' %}
+{{ vite_entry_link_tags(theme ~ 'Theme') }}
+{% endif %}
+
+{{ vite_entry_link_tags('fileManagerPreview') }}
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+{% if theme != 'penta' %}
+{{ vite_entry_script_tags(theme ~ 'Theme') }}
+{% endif %}
+{{ vite_entry_script_tags('fileManagerPreview') }}
+{% endblock %}

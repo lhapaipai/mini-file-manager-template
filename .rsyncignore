@@ -1,0 +1,12 @@
+.env.local
+/var/cache
+/var/log
+
+/public/uploads
+/public/media
+
+/node_modules
+.git
+.vscode
+.local
+.berlin
