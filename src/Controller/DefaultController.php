@@ -59,11 +59,19 @@ class DefaultController extends AbstractController
             'fileUpload' => [
                 'maxFileSize' => 10 * 1024 * 1024,
             ],
+            'fileValidation' => [
+                'mimeGroup' => 'image',
+                'imageOptions' => [
+                    'ratio' => 1,
+                ],
+            ],
             'multiple' => true,
         ]);
         if ('penta' !== $theme) {
             $config['themePrefix'] = $theme;
             $config['injectCssVars'] = false;
+            $config['showValidationString'] = false;
+            $config['canEditImageSize'] = false;
         }
 
         return $this->render('default/manager-modal.html.twig', [
