@@ -2,6 +2,9 @@
 
 {% block title %}File manager{% endblock %}
 
+{% block body_class %}manager-preview{% endblock %}
+
+
 {% block body %}
 <p>Thème :
   <a href="{{ path('file_manager_preview') }}">Penta (défaut)</a>
@@ -14,7 +17,8 @@
   sélection
 </p>
 <main class="main">
-  <div id="file-manager-preview" data-minifilemanager="{{ fileManagerConfig | json_encode | e('html_attr') }}"></div>
+  <div id="file-manager-preview" data-name="logo"
+    data-minifilemanager="{{ fileManagerConfig | json_encode | e('html_attr') }}"></div>
   <p>Output</p>
   <pre id="output"></pre>
 

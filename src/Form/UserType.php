@@ -34,8 +34,7 @@ class UserType extends AbstractType
                             'origin' => 'public_uploads',
                         ],
                     ],
-                    'themePrefix' => 'bric',
-                    'injectCssVars' => false,
+                    'themePrefix' => $options['themePrefix'],
                 ],
             ]);
     }
@@ -44,6 +43,7 @@ class UserType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => User::class,
+            'themePrefix' => 'penta',
         ]);
     }
 }

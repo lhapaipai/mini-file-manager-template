@@ -3,6 +3,12 @@
 {% block title %}Edit Post{% endblock %}
 
 {% block body %}
+<p>Thème :
+  <a href="{{ path('post_edit', {id: post.id}) }}">Penta (défaut)</a>
+  {% for customTheme in themes %}
+  <a href="{{ path('post_edit', {id: post.id, theme: customTheme }) }}">{{ customTheme }}</a>
+  {% endfor %}
+</p>
 {{ form_start(form) }}
 {{ form_widget(form) }}
 <button class="penta-button">Save</button>

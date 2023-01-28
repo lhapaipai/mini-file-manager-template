@@ -53,7 +53,9 @@ class PostController extends AbstractController
         EntityManagerInterface $entityManager,
         $theme
     ): Response {
-        $form = $this->createForm(PostType::class, $post);
+        $form = $this->createForm(PostType::class, $post, [
+            'themePrefix' => $theme,
+        ]);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

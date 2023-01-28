@@ -6,7 +6,7 @@ import dotenv from 'dotenv';
 import path from "path";
 
 let entryPoints = {
-  "app": "./assets/app.scss",
+  "app": "./assets/app/index.scss",
   "fileManager": "./assets/file-manager.js",
   "fileManagerModal": "./assets/file-manager-modal.js",
   "fileManagerPreview": "./assets/file-manager-preview.js",

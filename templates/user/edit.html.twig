@@ -3,7 +3,12 @@
 {% block title %}Edit User{% endblock %}
 
 {% block body %}
-<h1>Edit User</h1>
+<p>Thème :
+  <a href="{{ path('user_edit', {id: user.id}) }}">Penta (défaut)</a>
+  {% for customTheme in themes %}
+  <a href="{{ path('user_edit', {id: user.id, theme: customTheme }) }}">{{ customTheme }}</a>
+  {% endfor %}
+</p>
 
 {{ form_start(form) }}
 {{ form_widget(form) }}

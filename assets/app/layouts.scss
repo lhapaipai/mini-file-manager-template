@@ -1,0 +1,75 @@
+body.manager {
+  #file-manager {
+    flex: 1;
+  }
+}
+
+body.manager-modal {
+  .main {
+    text-align: center;
+
+  }
+
+  p {
+    margin: 2rem 0 .5rem;
+  }
+
+  code {
+    max-width: 900px;
+    min-height: 200px;
+    display: block;
+    margin: 0 auto;
+    box-shadow: inset 0 0 3px var(--gray);
+    text-align: left;
+    overflow: auto;
+    padding: .5rem;
+  }
+}
+
+body.tinymce {
+  div.mini-file-manager-tinymce {
+    position: relative;
+    z-index: 1400;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-size: 14px;
+
+    --primary-color-light: #fff9d2;
+    --primary-color: #207ab7;
+    --primary-color-text: #ffffff;
+    --primary-color-active: #1c6ca1;
+    --primary-color-dark: #134f77;
+
+    --gray-extra-light: #e7e7e7;
+    --gray-light: #ccc;
+    --gray: #999;
+    --gray-dark: #333;
+
+    --form-border-radius: 3px;
+    --form-border-width: 1px;
+    --form-ring-shadow: 0 0 1px 3px #eee;
+
+    --transition-border: border-color 0.3s ease;
+    --transition-shadow: box-shadow 0.3s ease;
+    --transition-background: background-color 0.3s ease;
+    --transition-color: color 0.3s ease;
+    --transition-opacity: opacity 0.3s ease;
+
+    --box-shadow: 0 0 48px rgba(0, 0, 0, 0.075);
+
+    --background-color: rgba(255, 255, 255, .75);
+
+    --red: #842029;
+    --red-light: #f8d7da;
+    --red-text: #dc3545;
+
+    --green-light: #d1eacf;
+    --green: #2b5229;
+
+    --orange: rgb(217, 142, 1);
+
+    --blue-light: #e6e8ef;
+    --blue-prestashop: #bbcdd2;
+
+    --blue-light: #e6e8ef;
+  }
+}

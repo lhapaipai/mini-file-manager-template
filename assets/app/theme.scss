@@ -25,15 +25,7 @@ nav.mfmt-nav {
   font-size: .8rem;
 
   a {
-    transition: color 0.3s ease;
-    color: #666;
-    margin: 2px 2rem;
-    text-decoration: none;
-
-    &:hover {
-      color: black;
-    }
-
+    margin: 2px .5rem;
   }
 
   .group {
@@ -41,6 +33,17 @@ nav.mfmt-nav {
     margin: 0 1rem;
     border-radius: 5px;
   }
+}
+
+a {
+  transition: color 0.3s ease;
+  color: #666;
+  text-decoration: none;
+
+  &:hover {
+    color: black;
+  }
+
 }
 
 // body {

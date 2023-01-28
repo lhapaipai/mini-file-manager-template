@@ -3,8 +3,12 @@
 {% block title %}Edit Page{% endblock %}
 
 {% block body %}
-
-<h1>Edit Page</h1>
+<p>Thème :
+  <a href="{{ path('page_edit', {id: page.id}) }}">Penta (défaut)</a>
+  {% for customTheme in themes %}
+  <a href="{{ path('page_edit', {id: page.id, theme: customTheme }) }}">{{ customTheme }}</a>
+  {% endfor %}
+</p>
 
 {{ form_start(form) }}
 {{ form_widget(form) }}

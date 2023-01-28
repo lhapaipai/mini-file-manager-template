@@ -3,12 +3,11 @@
 namespace App\Form;
 
 use App\Entity\Page;
-use App\Form\Type\UploadedFileType;
 use Pentatrion\UploadBundle\Form\EntitiesFilePickerType;
+use Pentatrion\UploadBundle\Service\FileManagerHelperInterface;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Pentatrion\UploadBundle\Service\FileManagerHelperInterface;
 
 class PageType extends AbstractType
 {
@@ -30,9 +29,10 @@ class PageType extends AbstractType
                             'label' => 'Uploads',
                             'directory' => 'user',
                             'origin' => 'public_uploads',
-                        ]
+                        ],
                     ],
-                ])
+                    'themePrefix' => $options['themePrefix'],
+                ]),
             ]);
     }
 
@@ -40,6 +40,7 @@ class PageType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Page::class,
+            'themePrefix' => 'penta',
         ]);
     }
 }

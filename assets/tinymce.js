@@ -3,9 +3,6 @@
 
 import { fileManagerModal } from "../extra/mini-file-manager/src/index";
 
-
-import "./tinymce.scss";
-
 let fileManagerOptions = {
   endPoint: '/media-manager',
   entryPoints: [

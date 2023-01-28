@@ -34,7 +34,6 @@ class DefaultController extends AbstractController
         ]);
         if ('penta' !== $theme) {
             $config['themePrefix'] = $theme;
-            $config['injectCssVars'] = false;
         }
 
         return $this->render('default/manager.html.twig', [
@@ -69,7 +68,6 @@ class DefaultController extends AbstractController
         ]);
         if ('penta' !== $theme) {
             $config['themePrefix'] = $theme;
-            $config['injectCssVars'] = false;
             $config['showValidationString'] = false;
             $config['canEditImageSize'] = false;
         }
@@ -97,10 +95,10 @@ class DefaultController extends AbstractController
                 'maxFileSize' => 10 * 1024 * 1024,
             ],
             'multiple' => false,
+            'debug' => true,
         ]);
         if ('penta' !== $theme) {
             $config['themePrefix'] = $theme;
-            $config['injectCssVars'] = false;
         }
 
         return $this->render('default/manager-preview.html.twig', [

@@ -45,7 +45,9 @@ class UserController extends AbstractController
     #[Route('/{id}/edit/{theme}', name: 'user_edit', methods: ['GET', 'POST'], defaults: ['theme' => 'penta'])]
     public function edit(Request $request, User $user, $theme, EntityManagerInterface $entityManager): Response
     {
-        $form = $this->createForm(UserType::class, $user);
+        $form = $this->createForm(UserType::class, $user, [
+            'themePrefix' => $theme,
+        ]);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

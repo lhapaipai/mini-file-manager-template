@@ -45,7 +45,9 @@ class PageController extends AbstractController
     #[Route('/{id}/edit/{theme}', name: 'page_edit', methods: ['GET', 'POST'], defaults: ['theme' => 'penta'])]
     public function edit(Request $request, Page $page, $theme, EntityManagerInterface $entityManager): Response
     {
-        $form = $this->createForm(PageType::class, $page);
+        $form = $this->createForm(PageType::class, $page, [
+            'themePrefix' => $theme,
+        ]);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

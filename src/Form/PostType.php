@@ -32,9 +32,8 @@ class PostType extends AbstractType
                             'ratio' => 1,
                         ],
                     ],
-                    'multiple' => true,
-                    'themePrefix' => 'bric',
-                    'injectCssVars' => false,
+                    'multiple' => false,
+                    'themePrefix' => $options['themePrefix'],
                 ],
             ]);
     }
@@ -43,6 +42,7 @@ class PostType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Post::class,
+            'themePrefix' => 'penta',
         ]);
     }
 }

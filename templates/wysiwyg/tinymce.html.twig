@@ -2,18 +2,20 @@
 
 {% block title %}TinyMCE{% endblock %}
 
+{% block body_class %}tinymce{% endblock %}
+
 {% block body %}
-    <textarea id="tinymce"></textarea>
+<textarea id="tinymce"></textarea>
 {% endblock %}
 
 
 {% block stylesheets %}
-    {{ parent() }}
-    {{ vite_entry_link_tags('tinymce') }}
+{{ parent() }}
+{{ vite_entry_link_tags('tinymce') }}
 {% endblock %}
 
 {% block javascripts %}
-    {{ parent() }}
-    <script src="/tinymce/tinymce.min.js"></script>
-    {{ vite_entry_script_tags('tinymce') }}
+{{ parent() }}
+<script src="/tinymce/tinymce.min.js"></script>
+{{ vite_entry_script_tags('tinymce') }}
 {% endblock %}
