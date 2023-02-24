@@ -15,6 +15,12 @@ class DefaultController extends AbstractController
         return $this->render('default/welcome.html.twig');
     }
 
+    #[Route('/basic-file-manager', name: 'basic_file_manager')]
+    public function basicFileManager(): Response
+    {
+        return $this->render('default/basic-file-manager.html.twig');
+    }
+
     #[Route('/manager/{theme}', name: 'file_manager', defaults: ['theme' => 'penta'])]
     public function manager(FileManagerHelperInterface $fileManagerHelper, $theme): Response
     {

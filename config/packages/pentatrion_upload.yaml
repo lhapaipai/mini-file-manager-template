@@ -8,5 +8,10 @@ pentatrion_upload:
             path: "%kernel.project_dir%/public/uploads"
             # prefix to add in order to be found by a liip_imagine loader
             liip_path: "/uploads"
-
+        private_uploads:
+            # if directory is inside %kernel.project_dir%/public, files
+            # will be directly accessible.
+            path: "%kernel.project_dir%/var/secret"
+            # prefix to add in order to be found by a liip_imagine loader
+            liip_path: ""
     liip_filters: ["small"]

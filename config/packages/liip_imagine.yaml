@@ -21,5 +21,6 @@ liip_imagine:
         default:
             filesystem:
                 data_root:
-                # must be linked with pentatrion_upload -> origin.[origin-name].liip_path
-                - "%kernel.project_dir%/public"
+                    # must be linked with pentatrion_upload -> origin.[origin-name].liip_path
+                    - "%kernel.project_dir%/public"
+                    - "%kernel.project_dir%/var/secret"

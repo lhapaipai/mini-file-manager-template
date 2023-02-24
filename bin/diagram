@@ -1,0 +1,102 @@
+#!/bin/bash
+
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+PROJECT_DIR=$(dirname "$SCRIPT_DIR")
+
+DATE=$(date +"%Y-%m-%d")
+DATETIME=$(date +"%Y-%m-%d-%H-%M")
+
+USER_ID=$(id -u)
+GROUP_ID=$(id -g)
+
+BACKUP_DIR="var/backup/$DATE"
+DUMP_FILENAME="db-schema-dump-$DATETIME.sql"
+
+cd "$PROJECT_DIR"
+
+if ! command -v sql2dbml &> /dev/null
+then
+    echo "sql2dbml could not be found"
+    echo "install @dbml/cli package globally"
+    echo "yarn global add @dbml/cli"
+    exit
+fi
+
+mkdir -p $BACKUP_DIR
+PGPASSWORD=bric docker exec -u $USER_ID:$GROUP_ID bric-rwp_database_1 pg_dump \
+    --host=127.0.0.1 \
+    --port=5432 \
+    --username=bric \
+    --no-owner \
+    --schema-only \
+    --file=/mnt/backup/$DATE/$DUMP_FILENAME
+
+# remove ::timestamp without time zone
+sed -i 's/::timestamp without time zone//g' $BACKUP_DIR/$DUMP_FILENAME
+
+# remove ::character varying
+sed -i "s/::character varying//g" $BACKUP_DIR/$DUMP_FILENAME
+
+# remove DC2Type:datetime_immutable line
+sed -i "/DC2Type:datetime_immutable/d" $BACKUP_DIR/$DUMP_FILENAME
+
+# remove COMMENT ON COLUMN
+sed -i "/COMMENT ON COLUMN/d" $BACKUP_DIR/$DUMP_FILENAME
+
+# remove precision from "double precision"
+sed -i "s/double precision/double/g" $BACKUP_DIR/$DUMP_FILENAME
+
+# remove DEFAULT '{}'::json
+sed -i "s/DEFAULT '{}'::json//g" $BACKUP_DIR/$DUMP_FILENAME
+
+sql2dbml \
+    $BACKUP_DIR/$DUMP_FILENAME \
+    --postgres \
+    -o $BACKUP_DIR/db-structure-$DATETIME.sql.dbml
+
+# for TABLE in builtin_app community community_user_role iframe_app tag
+# do
+#   sed -i "s|Table \\\"$TABLE\\\"|Table \"$TABLE\" [headercolor: #27ae60]|g" $BACKUP_DIR/db-structure-$DATETIME.sql.dbml
+# done
+
+# # training
+# for TABLE in uploaded_file doctrine_migration_versions
+# do
+#   sed -i "s|Table \\\"$TABLE\\\"|Table \"$TABLE\" [headercolor: #8f8dd8]|g" $BACKUP_DIR/db-structure-$DATETIME.sql.dbml
+# done
+
+
+# # training
+# for TABLE in training training_block_user_data training_module training_page training_user_data
+# do
+#   sed -i "s|Table \\\"$TABLE\\\"|Table \"$TABLE\" [headercolor: #EB801B]|g" $BACKUP_DIR/db-structure-$DATETIME.sql.dbml
+# done
+
+
+# # surveys
+# for TABLE in survey_admin_feedback survey_section survey_section_user_data survey_user_data survey
+# do
+#   sed -i "s|Table \\\"$TABLE\\\"|Table \"$TABLE\" [headercolor: #DE65C3]|g" $BACKUP_DIR/db-structure-$DATETIME.sql.dbml
+# done
+
+# # podcast
+# for TABLE in podcast_episode podcast_chapter podcast_serie
+# do
+#   sed -i "s|Table \\\"$TABLE\\\"|Table \"$TABLE\" [headercolor: #990D0D]|g" $BACKUP_DIR/db-structure-$DATETIME.sql.dbml
+# done
+
+# # page
+# for TABLE in page
+# do
+#   sed -i "s|Table \\\"$TABLE\\\"|Table \"$TABLE\" [headercolor: #6724BB]|g" $BACKUP_DIR/db-structure-$DATETIME.sql.dbml
+# done
+
+# # join table
+# for TABLE in survey_tag training_tag podcast_serie_tag podcast_contributor survey_contributor training_contributor survey_community training_community global_partner_app_community community_builtin_app
+# do
+#   sed -i "s|Table \\\"$TABLE\\\"|Table \"$TABLE\" [headercolor: #BBBBBB]|g" $BACKUP_DIR/db-structure-$DATETIME.sql.dbml
+# done
+
+cp $BACKUP_DIR/db-structure-$DATETIME.sql.dbml extra/dbml/schema.dbml
+
+echo "shema available : ./extra/dbml/schema.dbml"

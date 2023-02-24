@@ -7,6 +7,7 @@ import path from "path";
 
 let entryPoints = {
   "app": "./assets/app/index.scss",
+  "basicFileManager": "./assets/basic-file-manager.js",
   "fileManager": "./assets/file-manager.js",
   "fileManagerModal": "./assets/file-manager-modal.js",
   "fileManagerPreview": "./assets/file-manager-preview.js",

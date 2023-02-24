@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}File manager{% endblock %}
+
+{% block body_class %}manager{% endblock %}
+
+{% block body %}
+
+<div id="file-manager"></div>
+{% endblock %}
+
+
+{% block stylesheets %}
+{{ parent() }}
+{{ vite_entry_link_tags('basicFileManager') }}
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+{{ vite_entry_script_tags('basicFileManager') }}
+{% endblock %}

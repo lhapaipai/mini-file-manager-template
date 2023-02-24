@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello SandboxController!{% endblock %}
+
+{% block body %}
+{{ form(form) }}
+
+{# <div>
+    <img src="{{ uploaded_file_web_path(comment.imagePath) }}" />
+</div> #}
+
+<div>
+    <img src="{{ uploaded_image_filtered(comment.imagePath, 'small') }}" />
+</div>
+{# <div>
+    <img src="{{ 'file-manager/images/bg.png' | imagine_filter('small') }}" />
+</div> #}
+{# <div>
+    <img src="{{ 'ogoxe/paysage2.jpg' | imagine_filter('small') }}" />
+    <img src="http://mini-file-manager-template.localhost/media/cache/small/ogoxe/paysage2.jpg" alt="">
+</div> #}
+
+
+{% endblock %}
