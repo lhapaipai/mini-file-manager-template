@@ -14,23 +14,18 @@ link-submodule:
 	rm -rf extra/*
 	ln -s ../../mini-file-manager extra/mini-file-manager
 	ln -s ../../upload-bundle/ extra/upload-bundle
-deploy-to-berlin: remote-clear-cache
+deploy-to-berlin:
 	rsync -rLptgoDv --delete \
 	--exclude-from .rsyncignore \
 	$(local_path)/ \
 	berlin:$(remote_path)
 
-	scp $(local_path)/.berlin/.env.local berlin:$(remote_path)/
+	scp $(local_path)/.local/.berlin/.env.local berlin:$(remote_path)/
 
 	ssh berlin "\
 		cd $(remote_path) && \
+		symfony console cache:clear && \
 		symfony console doc:mig:mig -n"
-
-	make remote-clear-cache
-
-.PHONY: remote-clear-cache
-remote-clear-cache: ## supprime le cache distant
-	ssh berlin "sudo -- sh -c 'rm -rf $(remote_path)/var/cache/*'"
 
 db-init:
 	symfony console doc:sche:drop --full-database --force

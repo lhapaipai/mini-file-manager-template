@@ -6,12 +6,15 @@
 
 
 {% block body %}
+
+{% if themes | length > 0 %}
 <p>Thème :
     <a href="{{ path('file_manager_modal') }}">Penta (défaut)</a>
     {% for customTheme in themes %}
     <a href="{{ path('file_manager_modal', {theme: customTheme }) }}">{{ customTheme }}</a>
     {% endfor %}
 </p>
+{% endif %}
 
 <main class="main">
     <button class="penta-button" id="file-picker"

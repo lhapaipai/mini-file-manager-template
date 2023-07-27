@@ -9,13 +9,13 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class DefaultController extends AbstractController
 {
-    #[Route('/', name: 'welcome', methods: ['GET'])]
+    #[Route('/image', name: 'image', methods: ['GET'])]
     public function welcome(): Response
     {
-        return $this->render('default/welcome.html.twig');
+        return $this->render('default/image.html.twig');
     }
 
-    #[Route('/basic-file-manager', name: 'basic_file_manager')]
+    #[Route('/', name: 'basic_file_manager')]
     public function basicFileManager(): Response
     {
         return $this->render('default/basic-file-manager.html.twig');

@@ -6,12 +6,14 @@
 
 
 {% block body %}
+{% if themes | length > 0 %}
 <p>Thème :
   <a href="{{ path('file_manager_preview') }}">Penta (défaut)</a>
   {% for customTheme in themes %}
   <a href="{{ path('file_manager_preview', {theme: customTheme }) }}">{{ customTheme }}</a>
   {% endfor %}
 </p>
+{% endif %}
 <p>
   à la validation du gestionnaire de fichiers renvoie un callback qui peut être utilisé pour capturer la nouvelle
   sélection

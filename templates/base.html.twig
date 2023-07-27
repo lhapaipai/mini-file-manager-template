@@ -23,8 +23,9 @@
             <a href="{{ path('file_manager') }}">File Manager</a>
             <a href="{{ path('file_manager_modal') }}">File Manager Modal</a>
             <a href="{{ path('file_manager_preview') }}">File Manager with preview</a>
-
         </div>
+
+        {% if themes | length > 0 %}
         <div class="group">
             <a href="{{ path('post_index') }}">Post : Text Form File Picker</a>
             <a href="{{ path('user_index') }}">User : Entity Form File Picker</a>
@@ -32,10 +33,12 @@
 
         </div>
         <div class="group">
-            <a href="{{ path('welcome') }}">image</a>
+            <a href="{{ path('image') }}">image</a>
             <a href="{{ path('tinymce') }}">TinyMCE</a>
             {# <a href="{{ path(' ckeditor') }}">CKeditor</a> #}
         </div>
+
+        {% endif %}
     </nav>
     {% block body %}{% endblock %}
 </body>

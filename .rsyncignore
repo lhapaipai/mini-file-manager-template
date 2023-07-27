@@ -10,3 +10,6 @@
 .vscode
 .local
 .berlin
+.yarn
+
+/extra/mini-file-manager/node_modules

@@ -5,12 +5,14 @@
 {% block body_class %}manager{% endblock %}
 
 {% block body %}
+{% if themes | length > 0 %}
 <p>Thème :
   <a href="{{ path('file_manager') }}">Penta (défaut)</a>
   {% for customTheme in themes %}
   <a href="{{ path('file_manager', {theme: customTheme }) }}">{{ customTheme }}</a>
   {% endfor %}
 </p>
+{% endif %}
 <div id="file-manager" data-minifilemanager="{{ fileManagerConfig | json_encode | e('html_attr') }}"></div>
 {% endblock %}
 
